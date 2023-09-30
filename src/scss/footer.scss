@@ -1,0 +1,107 @@
+.footer {
+    &__container {
+        &_main {
+            @media (min-width: $md3) {
+                display: flex;
+                justify-content: space-between;
+                @include adaptiv-value('column-gap', 150, 50, 1);
+            }
+
+        }
+        &_bottom{
+            display: flex;
+            flex-wrap: wrap;
+            gap: rem(10);
+            justify-content: space-between;
+            @include adaptiv-value('padding-top', 31, 20, 1);
+            @include adaptiv-value('padding-bottom', 50, 30, 1);
+        }
+    }
+
+    &__main {
+        @include adaptiv-value('padding-bottom', 54, 25, 1);
+        border-bottom: rem(1) solid var(--black);
+        padding-top: rem(10);
+    }
+
+    &__menu {}
+
+    &__contacts {}
+
+    &__tels {
+        @include adaptiv-value('margin-bottom', 18, 10, 1);
+
+    }
+
+    &__tel {
+        color: #3FCAB5 !important;
+        font-family: 'Oswald', sans-serif;
+        display: block;
+        font-weight: 700;
+        @media (any-hover: hover) {
+            transition: color 0.3s ease;
+            &:hover{
+                color: #33a392 !important;
+            }
+        }
+    }
+
+    &__geol {
+        @include adaptiv-value('margin-bottom', 27, 15, 1);
+        font-size: 13px;
+    }
+
+    &__button {
+        padding: rem(10) rem(18);
+        border-radius: rem(6);
+        color: #fff;
+        background-color: var(--red);
+        font-size: 13px;
+        font-weight: 500;
+        @media (any-hover: hover) {
+            transition: background-color 0.3s ease;
+            &:hover{
+                background-color: #ec1c4d;
+            }
+        }
+    }
+
+    &__bottom {
+        font-size: 13px;
+    }
+
+}
+
+.menu-footer {
+    display: flex;
+    @include adaptiv-value('column-gap', 83, 20, 1);
+    row-gap: rem(5);
+    flex-wrap: wrap;
+    @media (max-width: $md3){
+        margin-bottom: rem(20);
+    }
+    &__col {}
+
+    &__label {
+        font-weight: 700;
+        @include adaptiv-value('margin-bottom', 21, 12, 1);
+        background-color: #00000000;
+        font-size: rem(13);
+
+    }
+
+    &__list {
+        a {
+            font-size: rem(13);
+            line-height: 181.523%;
+            color: #000;
+            @media (any-hover: hover) {
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: var(--blue);
+                }
+            }
+        }
+    }
+}

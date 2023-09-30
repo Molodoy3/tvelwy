@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/head.html', {
+'title': 'твэлви контакты'
+})
+
+<body>
+    <div class="wrapper wrapper_contacts">
+        @@include('html/header.html')
+        <div class="page">
+            <section class="contacts">
+                <div class='contacts__container'>
+                    <ul class="contacts__bred-crumbs bred-crumbs">
+                        <li><a href="index.html">Главная</a></li>
+                        <li>Контакты</li>
+                    </ul>
+                    <div class="contacts__top">
+                        <h1 class="contacts__title">Контактная информация</h1>
+                        <div class="mobile-application-development__links contacts__links">
+                            <a href="contact.html" class="mobile-application-development__connect">Связаться с
+                                нами</a>
+                            <ul class="welcome-block__social-list">
+                                <li><a href="" class="welcome-block__link">
+                                        <picture>
+                                            <source srcset='@img/iconsPng/telegram.webp' type='image/webp'>
+                                            <img src='@img/iconsPng/telegram.png' alt='telegram'>
+                                        </picture>
+                                    </a></li>
+                                <li><a href="" class="welcome-block__link">
+                                        <picture>
+                                            <source srcset='@img/iconsPng/watsApp.webp' type='image/webp'>
+                                            <img src='@img/iconsPng/watsApp.png' alt='watsApp'
+                                                class="welcome-block__watsApp-light">
+                                        </picture>
+                                        <picture>
+                                            <source srcset='@img/iconsPng/watsApp-dark.webp' type='image/webp'>
+                                            <img src='@img/iconsPng/watsApp-dark.png' alt='watsApp'
+                                                class="welcome-block__watsApp-dark">
+                                        </picture>
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="contacts__body">
+                        <div class="contacts__content">
+                            <div class="contacts__info">
+                                <div class="contacts__item">
+                                    <div class="contacts__label">
+                                        <div class="contacts__icon"><img src='@img/icons/sprite.svg#tel' alt='tel'></div>
+                                        <div class="contacts__label-value">Телефон для связи</div>
+                                    </div>
+                                    <div class="contacts__item-info">    
+                                        <a href="tel:73832873932" class="contacts__tel">+7 (383) 287-39-32</a>
+                                        <a href="tel:88002224950" class="contacts__tel">8 (800) 222-49-50</a>
+                                    </div>
+                                </div>
+                                <div class="contacts__item">
+                                    <div class="contacts__label">
+                                        <div class="contacts__icon"><img src='@img/icons/sprite.svg#geolocation' alt='geolocation'></div>
+                                        <div class="contacts__label-value">Адрес</div>
+                                    </div>
+                                    <div class="contacts__item-info">    
+                                        г.Екатеринбург, ул.<br> Металлургов, 6а, 2 этаж
+                                        <a href="" class="contacts__link-officies">Офисы в других городах</a>
+                                    </div>
+                                </div>
+                                <div class="contacts__item">
+                                    <div class="contacts__label">
+                                        <div class="contacts__icon"><img src='@img/icons/sprite.svg#mail' alt='mail'></div>
+                                        <div class="contacts__label-value">E-mail</div>
+                                    </div>
+                                    <div class="contacts__item-info contacts__item-info_mail">    
+                                        <a href="mail:Infinityyyy@yandex.ru">Infinityyyy@yandex.ru</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contacts__schedule">
+                                График работы с 8.00 до 20.00<br>
+                                Прием заявок и консультации 24 час
+                            </div>
+                            <div class="contacts__abbreviations">
+                                ОГРН 1126679000733<br>
+                                ИНН/КПП 6679007543/667901001
+                            </div>
+                        </div>
+                        <div class="contacts__map"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="form-order-service">
+                <div class='form-order-service__container'>
+                    <h3 class="form-order-service__title">Хотите заказать услугу?</h3>
+                    <div class="form-order-service__text">Свяжитесь с нами и расскажите о себе! Мы обязательно
+                        рассмотрим ваше предложение</div>
+                    <form action="#" class="form-order-service__form">
+                        <div class="form-order-service__inputs">
+                            <input type="text" name="name" placeholder="Ваше имя" class="form-order-service__input">
+                            <input type="tel" name="tel" placeholder="+ 7 (XXX) XXX-XX-XX"
+                                class="form-order-service__input">
+                        </div>
+                        <button class="form-order-service__button" type="submit" name="submit">Оставить заявку</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+        @@include('html/footer.html')
+        @@include('html/popup.html')
+    </div>
+    <script src="js/app.min.js"></script>
+</body>
+
+</html>

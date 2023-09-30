@@ -1,0 +1,31 @@
+<section class="popup-order" id="popupOrder">
+    <div class="popup-order__body">
+        <div class="popup-order__content">
+            <div class="popup-order__close" id="buttonForClosePopup">
+                <img src='@img/icons/sprite.svg#close' alt='close'>
+            </div>
+            <h2 class="popup-order__title">Хотите <mark>заказать</mark> услугу?</h2>
+            <div class="popup-order__text">Отправьте свое резюме, расскажите нам о себе и мы обязательно рассмотрим ваше предложение</div>
+            <form action="#" class="popup-order__form">
+                <select name="select" class="popup-order__select">
+                    <option disabled selected data-default-option>Выберите услугу</option>
+                    <option value="1" class="popup-order__option">услуга 1</option>
+                    <option value="2" class="popup-order__option">услуга 2</option>
+                    <option value="3" class="popup-order__option">услуга 3</option>
+                    <option value="4" class="popup-order__option">услуга 4</option>
+                </select>
+                <div class="popup-order__row-inputs">
+                    <input type="text" name="name" placeholder="Ваше имя" class="popup-order__input popup-order__input_small">
+                    <input type="email" name="email" placeholder="E-mail" class="popup-order__input popup-order__input_small">
+                </div>
+                <input type="text" name="description" placeholder="Описание проекта" class="popup-order__input">
+                <button class="popup-order__button-brief" type="button">+ прикрепить бриф о проекте</button>
+                <div class="popup-order__bottom">
+                    <button class="popup-order__button" type="submit" name="submit">отправить</button>
+                    <div class="popup-order__policy">Нажимая на кнопку, Вы соглашаетесь с уловиями 
+                        <a href="">Политики конфиденциальности</a></div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
