@@ -544,16 +544,15 @@ html.dark {
     padding-right: rem(70);
 
     &__img {
-        max-width: 100%;
+
         position: relative;
         z-index: 1;
-        margin-top: -170px;
-        margin-bottom: -150px;
-
-        @media (max-width: 990px) {
-            margin-top: -130px;
-            margin-bottom: -100px;
+        img{
+            margin-top: -30%;
+            margin-bottom: -30%;
+            max-width: 100%;
         }
+
     }
 
     &__background {
@@ -780,8 +779,24 @@ html.dark {
 
     &__form {
         max-width: rem(580);
-    }
 
+    }
+    &__select__wrap{
+        margin-bottom: rem(15);
+        position: relative;
+        &::after{
+            content:'';
+            position: absolute;
+            right: rem(20);
+            top: 50%;
+            transform: translate(0, -30%);
+            width: rem(18);
+            background: url(../img/Vector.svg) no-repeat;
+            height: rem(9);
+            background-size: 100%;
+            pointer-events: none;
+        }
+    }
     &__select {
         width: 100%;
         border-radius: rem(10);
@@ -791,7 +806,9 @@ html.dark {
         @include adaptiv-value('font-size', 20, 16, 1);
         color: #8D8D8D;
         cursor: pointer;
-        margin-bottom: rem(15);
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
     }
 
     &__option {
@@ -1476,7 +1493,8 @@ html.dark {
 
         position: relative;
         padding-bottom: perc(344, 1210);
-
+        border-radius: rem(10);
+        overflow: hidden;
         @media (max-width: $md3) {
             margin-bottom: rem(20);
         }

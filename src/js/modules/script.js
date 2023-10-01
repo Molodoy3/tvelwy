@@ -29,13 +29,13 @@ export function delegationClick() {
         }
 
         //для скрытия не нужного дефолтного элемента в выборе опции в попапе
-        if (targetElement.closest(".popup-order__select")) {
+/*         if (targetElement.closest(".popup-order__select")) {
             const selectElement = targetElement.closest(".popup-order__select");
             const defaultElement = selectElement.querySelector("[data-default-option]");
             if (defaultElement.style.display != "none") {
                 defaultElement.style.display = "none";
             }
-        }
+        } */
 
         //открытие, закрытие попапа
         if (targetElement.closest("#buttonForOpenPopup")) {
