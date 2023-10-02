@@ -100,14 +100,18 @@ body {
         background-size: perc(1920, 1920);
         background-position: top left;
 
-        .banners{
+        .banners {
             @include adaptiv-value('padding-bottom', 114, 35, 1);
         }
-        .banners__container{
+
+        .banners__container {
             max-width: rem(1000);
         }
-        .header__menu{
-            li:nth-child(2), li:nth-child(3) {
+
+        .header__menu {
+
+            li:nth-child(2),
+            li:nth-child(3) {
                 color: #fff;
             }
         }
@@ -122,7 +126,7 @@ body {
 
 .page {
     flex: 1 1 auto;
-    padding-top: rem(166);
+    /* padding-top: rem(107);
 
     @media (max-width: $md1) {
         padding-top: rem(100);
@@ -134,7 +138,7 @@ body {
 
     @media (max-width: $md3) {
         padding-top: rem(65);
-    }
+    } */
 }
 
 mark {
@@ -144,18 +148,22 @@ mark {
 /*=============================================================================================================*/
 /*Темная тема /=============================================================================*/
 html.dark {
-    .wrapper_about{
-        .header__menu{
-            li:nth-child(2), li:nth-child(3) {
+    .wrapper_about {
+        .header__menu {
+
+            li:nth-child(2),
+            li:nth-child(3) {
                 color: #000;
             }
         }
-        .header.scroll{
-            li{
+
+        .header.scroll {
+            li {
                 color: #fff;
             }
         }
     }
+
     .menu__body.open {
         a {
             color: #fff;
@@ -334,7 +342,9 @@ html.dark {
     @media (max-width: $md3) {
         margin-bottom: rem(40);
     }
-
+    @media (min-width: $md2){
+        padding-top: rem(30);
+    }
     &__container {
         display: flex;
 
@@ -364,9 +374,10 @@ html.dark {
         /*  @media (max-width: 500px){
             margin-top: 0;
         } */
+        //! вот тут было flex: 0 0 perc(1026, 1210);
         @media (min-width: 1000px) {
-            flex: 0 0 perc(1026, 1210);
-            margin-right: rem(-300);
+            flex: 0 0 perc(400, 1210);
+            margin-right: -10%;
             transform: translate(perc(-302, 1210), 0);
 
         }
@@ -381,7 +392,7 @@ html.dark {
             display: flex;
             order: 1;
             flex-direction: column;
-            align-items: center;
+            /* align-items: center; */
             align-self: center;
         }
 
@@ -392,6 +403,8 @@ html.dark {
 
     &__title {
         margin-bottom: em(20, 150);
+        @include adaptiv-value('font-size', 146, 70, 1);
+        
     }
 
     &__text {
@@ -418,10 +431,12 @@ html.dark {
         border-radius: rem(80);
         background-color: var(--blue);
         padding: rem(20) rem(45);
-        @include adaptiv-value('padding-top', 20, 10, 1);
-        @include adaptiv-value('padding-bottom', 20, 10, 1);
-        @include adaptiv-value('padding-left', 45, 20, 1);
-        @include adaptiv-value('padding-right', 45, 20, 1);
+        //! 20  15 20  15
+        @include adaptiv-value('padding-top', 15, 10, 1);
+        @include adaptiv-value('padding-bottom', 15, 10, 1);
+        //! 45 45
+        @include adaptiv-value('padding-left', 35, 20, 1);
+        @include adaptiv-value('padding-right', 35, 20, 1);
         display: flex;
         align-items: center;
         font-family: Rubik;
@@ -434,10 +449,12 @@ html.dark {
         font-weight: 400;
         line-height: 138.023%;
         color: #fff;
-        @include adaptiv-value('column-gap', 36, 14, 1);
+        //! 36
+        @include adaptiv-value('column-gap', 20, 14, 1);
 
         img {
-            @include adaptiv-value('width', 20, 15, 1);
+            //! 20, 15
+            @include adaptiv-value('width', 15, 12, 1);
         }
 
         @media (any-hover: hover) {
@@ -470,7 +487,8 @@ html.dark {
 
 /*=============================================================================================================*/
 .banners {
-    @include adaptiv-value('padding-bottom', 398, 100, 1);
+    //!398 100
+    @include adaptiv-value('padding-bottom', 100, 30, 1);
 
     &__container {
         @include adaptiv-value('gap', 50, 25, 1);
@@ -484,7 +502,8 @@ html.dark {
     }
 
     &__item {
-        border-radius: rem(25);
+        //!убрал border-radius: rem(25);
+        /* border-radius: rem(25); */
         overflow: hidden;
         display: block;
     }
@@ -547,7 +566,8 @@ html.dark {
 
         position: relative;
         z-index: 1;
-        img{
+
+        img {
             margin-top: -30%;
             margin-bottom: -30%;
             max-width: 100%;
@@ -647,6 +667,7 @@ html.dark {
     @include adaptiv-value('padding-right', 45, 25, 1);
     display: flex;
     flex-direction: column;
+
     &__title {
         font-family: 'Oswald', sans-serif;
         @include adaptiv-value('font-size', 96, 40, 1);
@@ -781,11 +802,13 @@ html.dark {
         max-width: rem(580);
 
     }
-    &__select__wrap{
+    
+    &__select__wrap {
         margin-bottom: rem(15);
         position: relative;
-        &::after{
-            content:'';
+
+        &::after {
+            content: '';
             position: absolute;
             right: rem(20);
             top: 50%;
@@ -797,6 +820,7 @@ html.dark {
             pointer-events: none;
         }
     }
+
     &__select {
         width: 100%;
         border-radius: rem(10);
@@ -909,12 +933,13 @@ html.dark {
 
 /*=============================================================================================================*/
 .catalog-main-block {
-
-    @include adaptiv-value('padding-top', 172, 20, 1);
-    @include adaptiv-value('padding-bottom', 450, 30, 1);
+//! было 172
+    @include adaptiv-value('padding-top', 70, 20, 1);
+    //! было 450
+    @include adaptiv-value('padding-bottom', 110, 30, 1);
 
     &__bred-crumbs {
-        @include adaptiv-value('margin-bottom', 44, 25, 1);
+        @include adaptiv-value('margin-bottom', 45, 25, 1);
         justify-content: center;
     }
 
@@ -926,6 +951,7 @@ html.dark {
 
     &__title {
         margin-bottom: em(20, 150);
+        text-align: center;
     }
 
     &__text-wrap {}
@@ -1053,13 +1079,15 @@ html.dark {
 
 /*=============================================================================================================*/
 .mobile-application-development {
-    @include adaptiv-value('padding-bottom', 100, 35, 1);
-    @include adaptiv-value('padding-top', 64, 30, 1);
+    @include adaptiv-value('padding-bottom', 70, 25, 1);
+    padding-top: rem(30);
 
     &__container {}
 
     &__bred-crumbs {
-        @include adaptiv-value('margin-bottom', 60, 20, 1);
+        //!
+        margin-bottom: rem(20);
+        /* @include adaptiv-value('margin-bottom', 60, 20, 1); */
     }
 
     &__body {
@@ -1076,7 +1104,8 @@ html.dark {
         }
 
         @media (min-width: $md3) {
-            flex: 0 0 perc(637, 1210);
+            //! было 637
+            flex: 0 0 perc(800, 1210);
         }
     }
 
@@ -1495,6 +1524,7 @@ html.dark {
         padding-bottom: perc(344, 1210);
         border-radius: rem(10);
         overflow: hidden;
+
         @media (max-width: $md3) {
             margin-bottom: rem(20);
         }
@@ -1678,15 +1708,18 @@ html.dark {
         @include adaptiv-value('font-size', 48, 30, 1);
         text-transform: uppercase;
         font-weight: 400;
+
         span {
             color: var(--red);
         }
 
         margin-bottom: em(20, 48);
-        @media (min-width: $md1){
+
+        @media (min-width: $md1) {
             position: relative;
-            &::after{
-                content:'';
+
+            &::after {
+                content: '';
                 position: absolute;
                 bottom: rem(33);
                 right: 10px;
@@ -1704,6 +1737,7 @@ html.dark {
 .contacts {
     @include adaptiv-value('margin-bottom', 80, 25, 1);
     padding-top: rem(35);
+
     &__container {}
 
     &__bred-crumbs {
@@ -1725,18 +1759,20 @@ html.dark {
         text-transform: uppercase;
 
     }
-    .mobile-application-development__connect{
+
+    .mobile-application-development__connect {
         margin-right: rem(33);
     }
+
     &__links {
-        @media (max-width: $md3){
+        @media (max-width: $md3) {
             flex: 1 1 auto;
         }
     }
 
     &__body {
 
-        @media (min-width: $md3){
+        @media (min-width: $md3) {
             display: flex;
             justify-content: space-between;
             @include adaptiv-value('column-gap', 50, 20, 1);
@@ -1744,7 +1780,7 @@ html.dark {
     }
 
     &__content {
-        @media (max-width: $md3){
+        @media (max-width: $md3) {
             margin-bottom: rem(20);
         }
     }
@@ -1770,7 +1806,8 @@ html.dark {
 
     &__icon {
         width: rem(20);
-        img{
+
+        img {
             max-width: 100%;
         }
     }
@@ -1781,14 +1818,18 @@ html.dark {
         padding-left: rem(40);
         font-weight: 700;
         @include adaptiv-value('font-size', 20, 16, 1);
+
         &_mail {
             font-size: rem(17);
             font-weight: 400;
-            a{
+
+            a {
                 color: inherit;
+
                 @media (any-hover: hover) {
                     transition: color 0.3s ease;
-                    &:hover{
+
+                    &:hover {
                         color: var(--blue);
                     }
                 }
@@ -1799,12 +1840,15 @@ html.dark {
     &__tel {
         display: block;
         color: inherit;
+
         &:not(:last-child) {
             margin-bottom: em(5, 16);
         }
+
         @media (any-hover: hover) {
             transition: color 0.3s ease;
-            &:hover{
+
+            &:hover {
                 color: var(--blue);
             }
         }
@@ -1817,9 +1861,11 @@ html.dark {
         font-size: rem(17);
         font-weight: 500;
         @include adaptiv-value('margin-top', 20, 10, 1);
+
         @media (any-hover: hover) {
             transition: color 0.3s ease;
-            &:hover{
+
+            &:hover {
                 color: #35a594;
                 text-decoration-line: underline;
             }
@@ -1834,7 +1880,7 @@ html.dark {
 
     &__abbreviations {
         border-radius: rem(10);
-        background:  #B2B2B2;
+        background: #B2B2B2;
         padding: rem(18) rem(20);
         font-size: rem(15);
         font-weight: 400;
@@ -1846,7 +1892,8 @@ html.dark {
         border-radius: rem(20);
         background-color: #e7e7e7;
         padding-bottom: 50%;
-        @media (min-width: $md3){
+
+        @media (min-width: $md3) {
             flex: 0 0 perc(685, 1210);
         }
     }

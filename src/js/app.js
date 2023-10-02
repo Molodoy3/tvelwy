@@ -1,12 +1,12 @@
 "use strict";
 //?Импорт кастомного открывания картинок (снипет doi)
-import customOpenImage from './modules/customOpenImage.js';
+//import customOpenImage from './modules/customOpenImage.js';
 //?Импор Свайпера (снипет swp)
 import Swiper from 'swiper';
 import { Navigation } from 'swiper/modules';
 //?Основные скрипты (делегирование, шапка)
 import { delegationClick } from './modules/script.js';
-import { headerScroll } from './modules/script.js';
+/* import { headerScroll } from './modules/script.js'; */
 import { closeMenu } from './modules/script.js';
 //?Функция определения мобильного устройства
 //import { isMobile } from "./modules/functions";
@@ -23,9 +23,10 @@ import { closeMenu } from './modules/script.js';
 window.addEventListener("load", windowLoad);
 function windowLoad() {
 
-    const j = new customOpenImage();
+    //const j = new customOpenImage();
+    
     delegationClick();
-    headerScroll();
+    /* headerScroll(); */
     /* initSpollers(); */
 
     //?Тема темная
