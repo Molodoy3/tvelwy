@@ -76,9 +76,12 @@ body {
     }
 
     &_catalog {
-        background: url(../img/icons/sprite.svg#decor-catalog) no-repeat;
-        background-size: perc(1920, 1920);
-        background-position: top left;
+        @media (min-width: 1650px){
+            background: url(../img/icons/sprite.svg#decor-catalog) no-repeat;
+            background-size: perc(1920, 1920);
+            background-position: top left;
+        }
+
 
         .footer__main {
             background-color: #fff;
@@ -148,7 +151,7 @@ mark {
 /*=============================================================================================================*/
 /*Темная тема /=============================================================================*/
 html.dark {
-    .wrapper_about {
+    /*     .wrapper_about {
         .header__menu {
 
             li:nth-child(2),
@@ -162,7 +165,7 @@ html.dark {
                 color: #fff;
             }
         }
-    }
+    } */
 
     .menu__body.open {
         a {
@@ -342,9 +345,15 @@ html.dark {
     @media (max-width: $md3) {
         margin-bottom: rem(40);
     }
-    @media (min-width: $md2){
+
+    @media (min-width: $md2) {
         padding-top: rem(30);
     }
+
+    max-height: rem(1015);
+    min-height: 50vw;
+    
+
     &__container {
         display: flex;
 
@@ -358,7 +367,7 @@ html.dark {
     }
 
     &__image {
-        flex: 0 0 perc(500, 1210);
+        /* flex: 0 0 perc(500, 1210); */
 
         .welcome-block__image-dark {
             display: none;
@@ -376,7 +385,7 @@ html.dark {
         } */
         //! вот тут было flex: 0 0 perc(1026, 1210);
         @media (min-width: 1000px) {
-            flex: 0 0 perc(400, 1210);
+            /* flex: 0 0 perc(400, 1210); */
             margin-right: -10%;
             transform: translate(perc(-302, 1210), 0);
 
@@ -404,7 +413,7 @@ html.dark {
     &__title {
         margin-bottom: em(20, 150);
         @include adaptiv-value('font-size', 146, 70, 1);
-        
+
     }
 
     &__text {
@@ -506,11 +515,15 @@ html.dark {
         /* border-radius: rem(25); */
         overflow: hidden;
         display: block;
+        min-height: 25vw;
     }
 
     &__button {
-        padding: rem(16.5) rem(48);
-        font-size: rem(20);
+        @include adaptiv-value('padding-top', 16.5, 10, 1);
+        @include adaptiv-value('padding-bottom', 16.5, 10, 1);
+        @include adaptiv-value('padding-left', 48, 25, 1);
+        @include adaptiv-value('padding-right', 48, 25, 1);
+        @include adaptiv-value('font-size', 20, 14, 1);
         font-weight: 500;
         color: #fff;
         background-color: var(--red);
@@ -529,14 +542,14 @@ html.dark {
 
 .menu-banners {
     background-color: var(--blue);
-    @include adaptiv-value('padding-top', 50, 20, 1);
-    @include adaptiv-value('padding-left', 50, 20, 1);
-    @include adaptiv-value('padding-right', 110, 20, 1);
-    @include adaptiv-value('padding-bottom', 108, 35, 1);
+    @include adaptiv-value('padding-top', 50, 10, 1);
+    @include adaptiv-value('padding-left', 50, 10, 1);
+    @include adaptiv-value('padding-right', 110, 10, 1);
+    @include adaptiv-value('padding-bottom', 108, 10, 1);
 
     &__title {
         font-family: 'Oswald', sans-serif;
-        @include adaptiv-value('font-size', 96, 40, 1);
+        @include adaptiv-value('font-size', 96, 30, 1);
         color: #00000000;
         -webkit-text-stroke-width: 2px;
         -webkit-text-stroke-color: var(--red);
@@ -548,7 +561,7 @@ html.dark {
         font-size: rem(20);
         font-weight: 500;
         color: #fff;
-        @include adaptiv-value('margin-bottom', 73, 30, 1);
+        @include adaptiv-value('margin-bottom', 73, 15, 1);
     }
 
     &__button {}
@@ -566,11 +579,15 @@ html.dark {
 
         position: relative;
         z-index: 1;
-
+        @include adaptiv-value('margin-bottom', 20, 10, 1);
         img {
-            margin-top: -30%;
-            margin-bottom: -30%;
-            max-width: 100%;
+            /* margin-top: -30%;
+            margin-bottom: -30%; */
+            /* max-width: 100%; */
+            object-fit: contain;
+           /*  max-height: 100%; */
+           /*  margin-top: -70%;
+            margin-bottom: -70%; */
         }
 
     }
@@ -589,14 +606,15 @@ html.dark {
             width: 100%;
             height: 100%;
             object-fit: cover;
+
         }
     }
 }
 
 .connect-banners {
     background-color: #fff;
-    @include adaptiv-value('padding-top', 71, 50, 1);
-    @include adaptiv-value('padding-bottom', 188, 150, 1);
+    @include adaptiv-value('padding-top', 71, 10, 1);
+    @include adaptiv-value('padding-bottom', 188, 100, 1);
     @include adaptiv-value('padding-left', 105, 15, 1);
     @include adaptiv-value('padding-right', 167, 15, 1);
     border: rem(1) solid var(--black);
@@ -610,6 +628,8 @@ html.dark {
         line-height: 88%;
         text-transform: uppercase;
         @include adaptiv-value('margin-bottom', 73, 20, 1);
+        position: relative;
+        z-index: 2;
 
         span {
             color: var(--blue);
@@ -618,7 +638,8 @@ html.dark {
 
     &__button {
         background-color: var(--blue);
-
+        position: relative;
+        z-index: 2;
         @media (any-hover: hover) {
             &:hover {
                 background-color: #3ab8a5;
@@ -802,7 +823,7 @@ html.dark {
         max-width: rem(580);
 
     }
-    
+
     &__select__wrap {
         margin-bottom: rem(15);
         position: relative;
@@ -933,7 +954,7 @@ html.dark {
 
 /*=============================================================================================================*/
 .catalog-main-block {
-//! было 172
+    //! было 172
     @include adaptiv-value('padding-top', 70, 20, 1);
     //! было 450
     @include adaptiv-value('padding-bottom', 110, 30, 1);
@@ -958,7 +979,8 @@ html.dark {
 
     &__text {
         max-width: rem(654);
-        text-align: left;
+        text-align: center;
+        margin: 0 auto;
     }
 }
 
@@ -968,7 +990,7 @@ html.dark {
         display: none;
     }
 
-    @include adaptiv-value('padding-bottom', 100, 70, 1);
+    @include adaptiv-value('padding-bottom', 70, 30, 1);
 
     &__container {
         display: grid;
@@ -1052,7 +1074,7 @@ html.dark {
 
 /*=============================================================================================================*/
 .seo-text {
-    @include adaptiv-value('padding-bottom', 200, 70, 1);
+    @include adaptiv-value('padding-bottom', 70, 30, 1);
 
     &__container {}
 
@@ -1635,22 +1657,30 @@ html.dark {
         text-align: right;
         margin-left: auto;
         margin-bottom: em(20, 150);
-
+        @include adaptiv-value('font-size', 150, 72, 1);
         mark {
             font-weight: 400;
         }
     }
 
     &__decor {
-        @include adaptiv-value('width', 127, 80, 1);
-        @include adaptiv-value('height', 127, 80, 1);
-        background-color: var(--red);
-        position: relative;
-        border-radius: 50%;
-        overflow: hidden;
-        position: absolute;
-        top: perc(320, 695);
-        right: perc(630, 1210);
+
+        @media (min-width: 390px) {
+            @include adaptiv-value('width', 127, 80, 1);
+            @include adaptiv-value('height', 127, 80, 1);
+            background-color: var(--red);
+            position: relative;
+            border-radius: 50%;
+            overflow: hidden;
+            position: absolute;
+            top: perc(350, 695);
+            left: perc(530, 1210);
+
+            @media (max-width: 800px) {
+                left: 5px;
+                top: perc(200, 695);
+            }
+        }
     }
 
     &__arrow-decor {
@@ -1659,9 +1689,16 @@ html.dark {
         left: 50%;
         transform: translate(-50%, -40%);
         @include adaptiv-value('width', 55, 30, 1);
+        @media (max-width: 390px) {
+            display: none;
+        }
     }
 
     &__text-decor {
+        @media (max-width: 390px) {
+            display: none;
+        }
+
         @include adaptiv-value('width', 110, 70, 1);
         @include adaptiv-value('height', 110, 70, 1);
         position: absolute;
