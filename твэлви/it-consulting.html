@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>твэлви мобильная разработка</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;700&family=Oswald:wght@300;400;500;600;700&family=Rubik+Mono+One&family=Rubik:wght@400;500;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+    <div class="wrapper wrapper_service">
+        <header class="header">
+    <div class='header__container'>
+        <a href="index.html" class="header__logo logo"><img src='img/logo.svg' alt='logo'></a>
+        <div class='header__menu menu'>
+            <div class='menu__icon'>
+                <span></span>
+            </div>
+            <nav class='menu__body'>
+                <ul class='menu__list'>
+                    <li><a href='catalog.html' class='menu__link'>Наши услуги</a></li>
+                    <li><a href='about.html' class='menu__link'>о нас</a></li>
+                    <li><a href='contacts.html' class='menu__link'>контакты</a></li>
+                    <!-- <li><a href='' class='menu__link'>скачать приложение</a></li> -->
+                    <li><a id="buttonForOpenPopup" href='#' class='menu__link'>Оформить заказ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+        <div class="page">
+            <section class="service" data-id-option="it-consulting">
+                <div class='service__container'>
+                    <ul class="service__bred-crumbs bred-crumbs">
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="catalog.html">Каталог услуг</a></li>
+                        <li>IT consulting</li>
+                    </ul>
+                    <div class="service__body">
+                        <div class="service__content">
+                            <h1 class="service__title">it consulting</h1>
+                            <h2 class="service__price">от 20 000 ₽</h2>
+                            <div class="service__text">
+                                <p>
+                                    Мы предлагаем консультационные услуги в области информационных технологий (IT). Наша команда экспертов поможет вам определить и реализовать эффективные IT-решения для вашего бизнеса. Мы также предлагаем стратегическое планирование и консультации по внедрению новых технологий для повышения эффективности вашего бизнеса.
+                                </p>
+                            </div>
+                            <div class="service__links">
+    <button type="button" id="buttonForOpenPopup"
+        class="service__button">Заказать услугу</button>
+    <a href="contact.html" class="service__connect">Связаться с
+        нами</a>
+    <ul class="welcome-block__social-list">
+        <li><a href="https://t.me/tvelvi_it" class="welcome-block__link">
+                <picture>
+                    <source srcset='img/iconsPng/telegram.webp' type='image/webp'>
+                    <img src='img/iconsPng/telegram.png' alt='telegram'>
+                </picture>
+            </a></li>
+        <li><a href="https://wa.me/message/GEJZ2WL6QLI2K1" class="welcome-block__link">
+                <picture>
+                    <source srcset='img/iconsPng/watsApp.webp' type='image/webp'>
+                    <img src='img/iconsPng/watsApp.png' alt='watsApp'
+                        class="welcome-block__watsApp-light">
+                </picture>
+                <picture>
+                    <source srcset='img/iconsPng/watsApp-dark.webp' type='image/webp'>
+                    <img src='img/iconsPng/watsApp-dark.png' alt='watsApp'
+                        class="welcome-block__watsApp-dark">
+                </picture>
+            </a></li>
+    </ul>
+</div>
+                        </div>
+                        <div class="service__image">
+                            <img class="service__image-light"
+                                src='img/icons/sprite.svg#services--08' alt='icon'>
+                            <img class="service__image-dark"
+                                src='img/icons/sprite.svg#services--08-dark' alt='icon'>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="development-content">
+                <div class='development-content__container'>
+                    <h2 class="development-content__title">Что входит в разработку?</h2>
+                    <div class="development-content__text">Давно выяснено, что при оценке дизайна и композиции читаемый
+                        текст мешает сосредоточиться. Lorem Ipsum
+                        используют потому, что тот обеспечивает боле</div>
+                    <div class="development-content__row">
+                        <div class="development-content__item">
+                            <div class="development-content__image-wrap-wrap">
+                                <div class="development-content__image-wrap">
+                                    <div class="development-content__image">
+                                        <picture>
+                                            <source srcset='img/development-content/1.webp' type='image/webp'>
+                                            <img src='img/development-content/1.jpg' alt='development content image'>
+                                        </picture>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="development-content__item-text">Формирование требований</div>
+                        </div>
+                        <div class="development-content__item">
+                            <div class="development-content__image-wrap-wrap">
+
+                                <div class="development-content__image-wrap">
+                                    <div class="development-content__image">
+                                        <picture>
+                                            <source srcset='img/development-content/6.webp' type='image/webp'>
+                                            <img src='img/development-content/6.jpg' alt='development content image'>
+                                        </picture>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="development-content__item-text">Диагностика</div>
+                        </div>
+                        <div class="development-content__item">
+                            <div class="development-content__image-wrap-wrap">
+
+                                <div class="development-content__image-wrap">
+                                    <div class="development-content__image">
+                                        <picture>
+                                            <source srcset='img/development-content/3.webp' type='image/webp'>
+                                            <img src='img/development-content/3.jpg' alt='development content image'>
+                                        </picture>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="development-content__item-text">Выработка решений</div>
+                        </div>
+                        <div class="development-content__item">
+                            <div class="development-content__image-wrap-wrap">
+
+                                <div class="development-content__image-wrap">
+                                    <div class="development-content__image">
+                                        <picture>
+                                            <source srcset='img/development-content/4.webp' type='image/webp'>
+                                            <img src='img/development-content/4.jpg' alt='development content image'>
+                                        </picture>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="development-content__item-text">Внедрение решений</div>
+                        </div>
+                    </div>
+                    <div class="development-content__row">
+                        <div class="development-content__item">
+                            <div class="development-content__image-wrap-wrap">
+
+                                <div class="development-content__image-wrap">
+                                    <div class="development-content__image">
+                                        <picture>
+                                            <source srcset='img/development-content/5.webp' type='image/webp'>
+                                            <img src='img/development-content/5.jpg' alt='development content image'>
+                                        </picture>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="development-content__item-text">Послепроэктный этап</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="form-order-service">
+                <div class='form-order-service__container'>
+                    <h3 class="form-order-service__title">Хотите заказать услугу?</h3>
+                    <div class="form-order-service__text">Свяжитесь с нами и расскажите о себе! Мы обязательно
+                        рассмотрим ваше предложение</div>
+                    <form action="#" class="form-order-service__form">
+                        <div class="form-order-service__inputs">
+                            <input type="text" name="name" placeholder="Ваше имя" class="form-order-service__input">
+                            <input type="tel" name="tel" placeholder="+ 7 (XXX) XXX-XX-XX"
+                                class="form-order-service__input">
+                        </div>
+                        <button class="form-order-service__button" type="submit" name="submit">Оставить заявку</button>
+                    </form>
+                </div>
+            </section>
+            <section class="cases">
+                <div class='cases__container'>
+                    <div class="cases__header">
+                        <div class="cases__name">
+                            <h2 class="cases__title">
+                                <span>Кейсы</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" fill="none">
+                                    <path
+                                        d="M12.6756 0L15.585 8.661H25L17.3831 14.0138L20.2925 22.6748L12.6756 17.322L5.05876 22.6748L7.96815 14.0138L0.351277 8.661H9.76625L12.6756 0Z" />
+                                    <path
+                                        d="M6.19612 1.67931L13.1928 7.77289L21.3464 3.21953L17.517 11.5389L24.5137 17.6325L15.1503 16.6806L11.3209 25L9.3634 16.0923L0 15.1404L8.15361 10.587L6.19612 1.67931Z" />
+                                </svg>
+                                <span>от твэлви</span>
+                            </h2>
+                            <div class="cases__label">сотрудничество с <br>
+                                крупными компаниями и не только </div>
+                        </div>
+                        <div class="cases-slider__navigate">
+                            <button type="button" class="cases-slider__prev cases-slider__navigate-button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="55" height="29" viewBox="0 0 55 29"
+                                    fill="none">
+                                    <path d="M16 7L8 14.5M8 14.5L16 22M8 14.5H54" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M28.5 14.5C28.5 22.232 22.232 28.5 14.5 28.5C6.76801 28.5 0.5 22.232 0.5 14.5C0.5 6.76801 6.76801 0.5 14.5 0.5C22.232 0.5 28.5 6.76801 28.5 14.5Z" />
+                                </svg>
+                            </button>
+                            <button type="button" class="cases-slider__next cases-slider__navigate-button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="55" height="29" viewBox="0 0 55 29"
+                                    fill="none">
+                                    <path d="M39 7L47 14.5M47 14.5L39 22M47 14.5H1" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M54.5 14.5C54.5 22.232 48.232 28.5 40.5 28.5C32.768 28.5 26.5 22.232 26.5 14.5C26.5 6.76801 32.768 0.5 40.5 0.5C48.232 0.5 54.5 6.76801 54.5 14.5Z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="cases-slider__slider">
+                        <div class="cases-slider__wrapper">
+                            <div class="cases-slider__slide">
+                                <div class="cases-slider__image">
+                                    <picture>
+                                        <source srcset='img/slider/01.webp' type='image/webp'>
+                                        <img src='img/slider/01.jpg' alt='image for slider'>
+                                    </picture>
+                                </div>
+                                <div class="cases-slider__content">
+                                    <h5 class="cases-slider__title">Разработка дизайна приложений для Delivery Club</h5>
+                                    <div class="cases-slider__text">
+                                        <p>
+                                            <span class="cases-slider__red">Задача агенства:</span> Lorem Ipsum
+                                            используют потому, что тот обеспечивает более
+                                            или менее стандартное заполнение шаблона, а также реальное распределение
+                                            букв и пробелов в абзацах, которое не получается при простой дубликации
+                                            "Здесь ваш текст.. Здесь ваш текст
+                                        </p>
+                                        <p>
+                                            <span class="cases-slider__blue">Результат:</span> Lorem Ipsum используют
+                                            потому, что тот обеспечивает более или менее стандартное заполнение шаблона,
+                                            а также реальное распределение букв и пробелов в абзацах, которое не
+                                            получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст
+                                        </p>
+                                    </div>
+                                    <div class="cases-slider__links">
+                                        <a href="" class="cases-slider__button">Изучить кейс</a>
+                                        <a href="" class="cases-slider__link-all">Смотреть все работы</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cases-slider__slide">
+                                <div class="cases-slider__image">
+                                    <picture>
+                                        <source srcset='img/slider/01.webp' type='image/webp'>
+                                        <img src='img/slider/01.jpg' alt='image for slider'>
+                                    </picture>
+                                </div>
+                                <div class="cases-slider__content">
+                                    <h5 class="cases-slider__title">Разработка дизайна приложений для Delivery Club</h5>
+                                    <div class="cases-slider__text">
+                                        <p>
+                                            <span class="cases-slider__red">Задача агенства:</span> Lorem Ipsum
+                                            используют потому, что тот обеспечивает более
+                                            или менее стандартное заполнение шаблона, а также реальное распределение
+                                            букв и пробелов в абзацах, которое не получается при простой дубликации
+                                            "Здесь ваш текст.. Здесь ваш текст
+                                        </p>
+                                        <p>
+                                            <span class="cases-slider__blue">Результат:</span> Lorem Ipsum используют
+                                            потому, что тот обеспечивает более или менее стандартное заполнение шаблона,
+                                            а также реальное распределение букв и пробелов в абзацах, которое не
+                                            получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст
+                                        </p>
+                                    </div>
+                                    <div class="cases-slider__links">
+                                        <a href="" class="cases-slider__button">Изучить кейс</a>
+                                        <a href="" class="cases-slider__link-all">Смотреть все работы</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cases-slider__slide">
+                                <div class="cases-slider__image">
+                                    <picture>
+                                        <source srcset='img/slider/01.webp' type='image/webp'>
+                                        <img src='img/slider/01.jpg' alt='image for slider'>
+                                    </picture>
+                                </div>
+                                <div class="cases-slider__content">
+                                    <h5 class="cases-slider__title">Разработка дизайна приложений для Delivery Club</h5>
+                                    <div class="cases-slider__text">
+                                        <p>
+                                            <span class="cases-slider__red">Задача агенства:</span> Lorem Ipsum
+                                            используют потому, что тот обеспечивает более
+                                            или менее стандартное заполнение шаблона, а также реальное распределение
+                                            букв и пробелов в абзацах, которое не получается при простой дубликации
+                                            "Здесь ваш текст.. Здесь ваш текст
+                                        </p>
+                                        <p>
+                                            <span class="cases-slider__blue">Результат:</span> Lorem Ipsum используют
+                                            потому, что тот обеспечивает более или менее стандартное заполнение шаблона,
+                                            а также реальное распределение букв и пробелов в абзацах, которое не
+                                            получается при простой дубликации "Здесь ваш текст.. Здесь ваш текст
+                                        </p>
+                                    </div>
+                                    <div class="cases-slider__links">
+                                        <a href="" class="cases-slider__button">Изучить кейс</a>
+                                        <a href="" class="cases-slider__link-all">Смотреть все работы</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="seo-text">
+                <div class='seo-text__container'>
+                    <h2 class="seo-text__title"><mark>НЕМНОГО</mark> о НАС</h2>
+                    <div class="seo-text__text">
+                        <p>
+                            Мы предлагаем полный цикл услуг, начиная от веб-разработки и заканчивая сложными ИТ решениями. Наша команда состоит из опытных и высококвалифицированных специалистов, каждый из которых специализируется в своей области. Мы готовы взяться за любой проект и гарантируем качество работы.
+                        </p>
+                        <p>
+                            Наш подход основан на создании небольших команд, специализирующихся на каждом проекте. Это позволяет нам эффективно решать задачи и удовлетворять потребности и ожидания наших клиентов. Мы всегда стремимся к индивидуальному подходу и готовы адаптироваться к любым вызовам.
+                        </p>
+                        <p>
+                            Мы также предлагаем консалтинговые услуги, информационную безопасность и аналитические услуги, чтобы помочь нашим клиентам принимать обоснованные решения и достичь успеха в сфере информационных технологий.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer class="footer">
+    <div class="footer__main">
+        <div class='footer__container footer__container_main'>
+            <nav  class="footer__menu menu-footer">
+                <div class="menu-footer__col">
+                    <a href="abouut.html" class="menu-footer__label">О компании</a>
+                    <!-- <ul class="menu-footer__list">
+                        <li><a href="">About Us Overview</a></li>
+                        <li><a href="">Leadership Team</a></li>
+                        <li><a href="">Values In Action</a></li>
+                        <li><a href="">Franchise Info</a></li>
+                        <li><a href="">Recalls & Alerts</a></li>
+                        <li><a href="">Real Estate</a></li>
+                        <li><a href="">Accessibility</a></li>
+                        <li><a href="">Investor Relations</a></li>
+                        <li><a href="">News & Notifications</a></li>
+                    </ul> -->
+                </div>
+                <div class="menu-footer__col">
+                    <a href="catalog.html" class="menu-footer__label">Сервисы</a>
+                    <!-- <ul class="menu-footer__list">
+                        <li><a href="">About Us Overview</a></li>
+                        <li><a href="">Leadership Team</a></li>
+                        <li><a href="">Values In Action</a></li>
+                        <li><a href="">Franchise Info</a></li>
+                        <li><a href="">Recalls & Alerts</a></li>
+                        <li><a href="">Real Estate</a></li>
+                        <li><a href="">Accessibility</a></li>
+                        <li><a href="">Investor Relations</a></li>
+                        <li><a href="">News & Notifications</a></li>
+                    </ul> -->
+                </div>
+                <div class="menu-footer__col">
+                    <a href="catalog.html" class="menu-footer__label">Наши услуги</a>
+                    <!-- <ul class="menu-footer__list">
+                        <li><a href="">About Us Overview</a></li>
+                        <li><a href="">Leadership Team</a></li>
+                        <li><a href="">Values In Action</a></li>
+                        <li><a href="">Franchise Info</a></li>
+                        <li><a href="">Recalls & Alerts</a></li>
+                        <li><a href="">Real Estate</a></li>
+                        <li><a href="">Accessibility</a></li>
+                        <li><a href="">Investor Relations</a></li>
+                        <li><a href="">News & Notifications</a></li>
+                    </ul> -->
+                </div>
+                <div class="menu-footer__col">
+                    <a href="index.html" class="menu-footer__label">Клиентам</a>
+                    <!-- <ul class="menu-footer__list">
+                        <li><a href="">About Us Overview</a></li>
+                        <li><a href="">Leadership Team</a></li>
+                        <li><a href="">Values In Action</a></li>
+                        <li><a href="">Franchise Info</a></li>
+                        <li><a href="">Recalls & Alerts</a></li>
+                        <li><a href="">Real Estate</a></li>
+                        <li><a href="">Accessibility</a></li>
+                        <li><a href="">Investor Relations</a></li>
+                        <li><a href="">News & Notifications</a></li>
+                    </ul> -->
+                </div>
+            </nav>
+            <div class="footer__contacts">
+                <div class="menu-footer__label">Контакты</div>
+                <div class="footer__tels">
+                    <a href="tel:79625641112" class="footer__tel">+7 962 564 11 12</a>
+                </div>
+                <div class="footer__geol">Казань, ул Пушкина, 12</div>
+                <button type="button" class="footer__button" id="buttonForOpenPopup">Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer__bottom">
+        <div class='footer__container_bottom'>
+            <a href="" class="footer__politick">Политика конфиденциальности</a>
+            <div class="footer__rights">&copy; 2023. All Rights Reserved</div>
+        </div>
+    </div>
+</footer>
+        <section class="popup-order" id="popupOrder">
+    <div class="popup-order__body">
+        <div class="popup-order__content">
+            <div class="popup-order__close" id="buttonForClosePopup">
+                <img src='img/icons/sprite.svg#close' alt='close'>
+            </div>
+            <h2 class="popup-order__title">Хотите <mark>заказать</mark> услугу?</h2>
+            <div class="popup-order__text">Отправьте свое резюме, расскажите нам о себе и мы обязательно рассмотрим ваше
+                предложение</div>
+            <form action="#" class="popup-order__form">
+                <div class="popup-order__select__wrap">
+                    <select name="select" class="popup-order__select req select" id="popup-order-select">
+                        <option disabled selected data-default-option>Выберите услугу</option>
+                        <option value="1" class="popup-order__option" data-id-option-select="cloud-solutions-and-hosting">Cloud решения и хостинг</option>
+                        <option value="2" class="popup-order__option" data-id-option-select="game-development">Разработка игр</option>
+                        <option value="3" class="popup-order__option" data-id-option-select="mobile-application-development">Разработка мобильных приложений</option>
+                        <option value="3" class="popup-order__option" data-id-option-select="it-consulting">IT consulting</option>
+                        <option value="3" class="popup-order__option" data-id-option-select="seo-optimisation">Seo оптимизация</option>
+                        <option value="3" class="popup-order__option" data-id-option-select="UX-UI-design">UX/UI дизайн</option>
+                        <option value="3" class="popup-order__option" data-id-option-select="web-development-agency">Разработка веб приложений</option>
+                        <option value="3" class="popup-order__option" data-id-option-select="website-development">Разработка сайтов</option>
+                    </select>
+                </div>
+                <div class="popup-order__row-inputs">
+                    <input type="text" name="name" placeholder="Ваше имя"
+                        class="popup-order__input popup-order__input_small req">
+                    <input type="text" name="contact" placeholder="E-mail или телефон"
+                        class="popup-order__input popup-order__input_small req contact">
+                </div>
+                <input type="text" name="description" placeholder="Описание проекта" class="popup-order__input req" data-validate-min="100" data-text-error="Количество символов: 100-300" maxlength="300">
+                <div class="popup-order__file">
+                    <input type="file" id="imageInput" accept=".pdf, .txt, .jpg" class="popup-order__input-file">
+                    <label for="imageInput" class="popup-order__label-file">
+                      <button type="button" class="popup-order__button-brief">+ прикрепить бриф о проекте</button>
+                    </label>
+                    <div class="popup-order__name-file none"></div>
+                </div>
+                <div class="popup-order__bottom">
+                    <button class="popup-order__button" type="submit" name="submit">отправить</button>
+                    <div class="popup-order__policy">Нажимая на кнопку, Вы соглашаетесь с уловиями
+                        <a href="">Политики конфиденциальности</a>
+                    </div>
+                </div>
+            </form>
+            <!-- <script>!function (a, m, o, c, r, m) { a[o + c] = a[o + c] || { setMeta: function (p) { this.params = (this.params || []).concat([p]) } }, a[o + r] = a[o + r] || function (f) { a[o + r].f = (a[o + r].f || []).concat([f]) }, a[o + r]({ id: "1224186", hash: "5dd02fd8e56ec0bd2c0dfc0e937fec28", locale: "ru" }), a[o + m] = a[o + m] || function (f, k) { a[o + m].f = (a[o + m].f || []).concat([[f, k]]) } }(window, 0, "amo_forms_", "params", "load", "loaded");</script>
+            <script id="amoforms_script_1224186" async="async" charset="utf-8"
+                src="https://forms.amocrm.ru/forms/assets/js/amoforms.js?1697373834"></script> -->
+        </div>
+    </div>
+</section>
+    </div>
+    <script src="js/app.min.js"></script>
+</body>
+
+</html>

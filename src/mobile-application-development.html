@@ -8,62 +8,29 @@
     <div class="wrapper wrapper_service">
         @@include('html/header.html')
         <div class="page">
-            <section class="mobile-application-development">
-                <div class='mobile-application-development__container'>
-                    <ul class="mobile-application-development__bred-crumbs bred-crumbs">
+            <section class="service" data-id-option="mobile-application-development">
+                <div class='service__container'>
+                    <ul class="service__bred-crumbs bred-crumbs">
                         <li><a href="index.html">Главная</a></li>
                         <li><a href="catalog.html">Каталог услуг</a></li>
                         <li>Разработка мобильных приложений</li>
                     </ul>
-                    <div class="mobile-application-development__body">
-                        <div class="mobile-application-development__content">
-                            <h1 class="mobile-application-development__title">разработка мобильных
+                    <div class="service__body">
+                        <div class="service__content">
+                            <h1 class="service__title">разработка мобильных
                                 приложений</h1>
-                            <h2 class="mobile-application-development__price">от 20 000 ₽</h2>
-                            <div class="mobile-application-development__text">
+                            <h2 class="service__price">от 20 000 ₽</h2>
+                            <div class="service__text">
                                 <p>
-                                    Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает
-                                    сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее
-                                    стандартное заполнение шаблона, а также реальное распределение букв и пробелов в
-                                    абзацах, которое не получается при простой дубликации "Здесь ваш текст.. Здесь ваш
-                                    текст..
-                                </p>
-                                <p>
-                                    Здесь ваш текст.." Многие программы электронной вёрстки и редакторы HTML используют
-                                    Lorem Ipsum в качестве текста по умолчанию
+                                    Мы специализируемся на создании инновационных и удобных мобильных приложений для различных платформ, таких как iOS и Android. Мы предлагаем полный цикл разработки, включая анализ требований, дизайн интерфейса, программирование и тестирование. Наша команда опытных разработчиков гарантирует высокое качество и эффективность работы.
                                 </p>
                             </div>
-                            <div class="mobile-application-development__links">
-                                <button type="button" id="buttonForOpenPopup"
-                                    class="mobile-application-development__button">Заказать услугу</button>
-                                <a href="contact.html" class="mobile-application-development__connect">Связаться с
-                                    нами</a>
-                                <ul class="welcome-block__social-list">
-                                    <li><a href="" class="welcome-block__link">
-                                            <picture>
-                                                <source srcset='@img/iconsPng/telegram.webp' type='image/webp'>
-                                                <img src='@img/iconsPng/telegram.png' alt='telegram'>
-                                            </picture>
-                                        </a></li>
-                                    <li><a href="" class="welcome-block__link">
-                                            <picture>
-                                                <source srcset='@img/iconsPng/watsApp.webp' type='image/webp'>
-                                                <img src='@img/iconsPng/watsApp.png' alt='watsApp'
-                                                    class="welcome-block__watsApp-light">
-                                            </picture>
-                                            <picture>
-                                                <source srcset='@img/iconsPng/watsApp-dark.webp' type='image/webp'>
-                                                <img src='@img/iconsPng/watsApp-dark.png' alt='watsApp'
-                                                    class="welcome-block__watsApp-dark">
-                                            </picture>
-                                        </a></li>
-                                </ul>
-                            </div>
+                            @@include('html/links-devolopment.html')
                         </div>
-                        <div class="mobile-application-development__image">
-                            <img class="mobile-application-development__image-light"
+                        <div class="service__image">
+                            <img class="service__image-light"
                                 src='@img/icons/sprite.svg#services--02' alt='icon'>
-                            <img class="mobile-application-development__image-dark"
+                            <img class="service__image-dark"
                                 src='@img/icons/sprite.svg#services--02-dark' alt='icon'>
                         </div>
                     </div>
@@ -87,7 +54,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="development-content__item-text">Прототипирование интерфейса</div>
+                            <div class="development-content__item-text">Формирование требований</div>
                         </div>
                         <div class="development-content__item">
                             <div class="development-content__image-wrap-wrap">
@@ -101,8 +68,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="development-content__item-text">Составление
-                                UI Kit</div>
+                            <div class="development-content__item-text">Проектирование</div>
                         </div>
                         <div class="development-content__item">
                             <div class="development-content__image-wrap-wrap">
@@ -110,13 +76,13 @@
                                 <div class="development-content__image-wrap">
                                     <div class="development-content__image">
                                         <picture>
-                                            <source srcset='@img/development-content/3.webp' type='image/webp'>
-                                            <img src='@img/development-content/3.jpg' alt='development content image'>
+                                            <source srcset='@img/development-content/1.webp' type='image/webp'>
+                                            <img src='@img/development-content/1.jpg' alt='development content image'>
                                         </picture>
                                     </div>
                                 </div>
                             </div>
-                            <div class="development-content__item-text">Прототипирование интерфейса</div>
+                            <div class="development-content__item-text">Реализация</div>
                         </div>
                         <div class="development-content__item">
                             <div class="development-content__image-wrap-wrap">
@@ -124,14 +90,43 @@
                                 <div class="development-content__image-wrap">
                                     <div class="development-content__image">
                                         <picture>
-                                            <source srcset='@img/development-content/4.webp' type='image/webp'>
-                                            <img src='@img/development-content/4.jpg' alt='development content image'>
+                                            <source srcset='@img/development-content/2.webp' type='image/webp'>
+                                            <img src='@img/development-content/2.jpg' alt='development content image'>
                                         </picture>
                                     </div>
                                 </div>
                             </div>
-                            <div class="development-content__item-text">Составление
-                                UI Kit</div>
+                            <div class="development-content__item-text">Тестирование</div>
+                        </div>
+                    </div>
+                    <div class="development-content__row">
+                        <div class="development-content__item">
+                            <div class="development-content__image-wrap-wrap">
+
+                                <div class="development-content__image-wrap">
+                                    <div class="development-content__image">
+                                        <picture>
+                                            <source srcset='@img/development-content/1.webp' type='image/webp'>
+                                            <img src='@img/development-content/1.jpg' alt='development content image'>
+                                        </picture>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="development-content__item-text">Внедрение</div>
+                        </div>
+                        <div class="development-content__item">
+                            <div class="development-content__image-wrap-wrap">
+
+                                <div class="development-content__image-wrap">
+                                    <div class="development-content__image">
+                                        <picture>
+                                            <source srcset='@img/development-content/2.webp' type='image/webp'>
+                                            <img src='@img/development-content/2.jpg' alt='development content image'>
+                                        </picture>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="development-content__item-text">Эксплуатация и сопровождение</div>
                         </div>
                     </div>
                 </div>
@@ -165,7 +160,7 @@
                                 </svg>
                                 <span>от твэлви</span>
                             </h2>
-                            <div class="cases__label">сотрудничество с
+                            <div class="cases__label">сотрудничество с <br>
                                 крупными компаниями и не только </div>
                         </div>
                         <div class="cases-slider__navigate">
@@ -287,27 +282,17 @@
             </section>
             <section class="seo-text">
                 <div class='seo-text__container'>
-                    <h2 class="seo-text__title"><mark>SEo текст</mark> о компании</h2>
+                    <h2 class="seo-text__title"><mark>НЕМНОГО</mark> о НАС</h2>
                     <div class="seo-text__text">
                         <p>
-                            It is a long established fact that a reader will be distracted by the readable content of a
-                            page when looking at its layout. The point of using Lorem Ipsum is that it
-                            has a more-or-less normal distribution of letters, as opposed to using 'Content here,
-                            content here', making it look like readable English.
+                            Мы предлагаем полный цикл услуг, начиная от веб-разработки и заканчивая сложными ИТ решениями. Наша команда состоит из опытных и высококвалифицированных специалистов, каждый из которых специализируется в своей области. Мы готовы взяться за любой проект и гарантируем качество работы.
                         </p>
                         <p>
-                            Many desktop publishing packages and web page editors now use Lorem Ipsum as their default
-                            model text, and a search for 'lorem ipsum' will uncover many
-                            web sites still in their infancy. Various versions have evolved over the years, sometimes by
-                            accident, sometimes on purpose (injected humour and the like).
+                            Наш подход основан на создании небольших команд, специализирующихся на каждом проекте. Это позволяет нам эффективно решать задачи и удовлетворять потребности и ожидания наших клиентов. Мы всегда стремимся к индивидуальному подходу и готовы адаптироваться к любым вызовам.
                         </p>
                         <p>
-                            It is a long established fact that a reader will be distracted by the readable content of a
-                            page when looking at its layout. The point of using Lorem Ipsum is that it
-                            has a more-or-less normal distribution of letters, as opposed to using 'Content here,
-                            content here', making it look like readable English.
+                            Мы также предлагаем консалтинговые услуги, информационную безопасность и аналитические услуги, чтобы помочь нашим клиентам принимать обоснованные решения и достичь успеха в сфере информационных технологий.
                         </p>
-
                     </div>
                 </div>
             </section>

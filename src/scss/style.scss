@@ -76,7 +76,7 @@ body {
     }
 
     &_catalog {
-        @media (min-width: 1650px){
+        @media (min-width: 1650px) {
             background: url(../img/icons/sprite.svg#decor-catalog) no-repeat;
             background-size: perc(1920, 1920);
             background-position: top left;
@@ -107,9 +107,9 @@ body {
             @include adaptiv-value('padding-bottom', 114, 35, 1);
         }
 
-        .banners__container {
+        /* .banners__container {
             max-width: rem(1000);
-        }
+        } */
 
         .header__menu {
 
@@ -191,11 +191,11 @@ html.dark {
         }
     }
 
-    .mobile-application-development__image-dark {
+    .service__image-dark {
         display: block;
     }
 
-    .mobile-application-development__image-light {
+    .service__image-light {
         display: none;
     }
 
@@ -342,8 +342,8 @@ html.dark {
 
 /*=============================================================================================================*/
 .welcome-block {
-    @media (max-width: $md3) {
-        margin-bottom: rem(40);
+    @media (max-width: $md2) {
+        margin-bottom: rem(25);
     }
 
     @media (min-width: $md2) {
@@ -351,11 +351,20 @@ html.dark {
     }
 
     max-height: rem(1015);
-    min-height: 50vw;
-    
+    min-height: 40vw;
+
+    @media (min-width: $md2) {
+        min-height: 45vw;
+    }
+
+    @media (min-width: $md2) {
+        margin-bottom: rem(-50);
+    }
+
 
     &__container {
         display: flex;
+        column-gap: rem(15);
 
         @media (min-width: 1000px) {
             margin-top: rem(-75);
@@ -368,35 +377,46 @@ html.dark {
 
     &__image {
         /* flex: 0 0 perc(500, 1210); */
+        display: flex;
+        flex-direction: column;
 
         .welcome-block__image-dark {
             display: none;
         }
 
+        flex: 1 1 auto;
+        height: 40vw;
+
+        @media (min-width: $md2) {
+            min-height: 45vw;
+        }
+
         @media (max-width: $md3) {
-            /*  order: 2;
-            margin: 0 auto;
-            margin-top: rem(-25); */
             display: none;
         }
 
-        /*  @media (max-width: 500px){
-            margin-top: 0;
-        } */
-        //! вот тут было flex: 0 0 perc(1026, 1210);
         @media (min-width: 1000px) {
-            /* flex: 0 0 perc(400, 1210); */
-            margin-right: -10%;
             transform: translate(perc(-302, 1210), 0);
-
         }
 
         img {
-            max-width: 100%;
+            height: 40vw;
+
+            @media (min-width: $md2) {
+                min-height: 45vw;
+            }
         }
     }
 
+
+
+
+
     &__content {
+        @media (min-width: 1750px) {
+            margin-left: -100px;
+        }
+
         @media (min-width: $md3) {
             display: flex;
             order: 1;
@@ -430,9 +450,10 @@ html.dark {
 
     &__links {
         display: flex;
-        justify-content: space-between;
+        /* justify-content: space-between; */
         gap: rem(10);
         flex-wrap: wrap;
+        @include adaptiv-value('column-gap', 30, 21, 1);
         align-self: stretch;
     }
 
@@ -502,10 +523,15 @@ html.dark {
     &__container {
         @include adaptiv-value('gap', 50, 25, 1);
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(rem(400), 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(rem(550), 1fr));
+        max-width: rem(1600);
+
+        @media (max-width: 1200px) {
+            grid-template-columns: repeat(auto-fit, minmax(rem(400), 1fr));
+        }
 
         @media (max-width: 850px) {
-            grid-template-columns: repeat(auto-fit, minmax(rem(300), 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(rem(250), 1fr));
 
         }
     }
@@ -515,7 +541,21 @@ html.dark {
         /* border-radius: rem(25); */
         overflow: hidden;
         display: block;
-        min-height: 25vw;
+        /* min-height: 25vw; */
+    }
+
+    &__social-list {
+        .welcome-block__watsApp-light {
+            display: block;
+        }
+
+        @include adaptiv-value('column-gap', 15, 10, 1);
+    }
+
+    &__links {
+        display: flex;
+        @include adaptiv-value('column-gap', 20, 14, 1);
+        align-items: center;
     }
 
     &__button {
@@ -538,14 +578,31 @@ html.dark {
             }
         }
     }
+
+    &_about {
+        .menu-banners {
+            background-color: var(--blue);
+            @include adaptiv-value('padding-top', 30, 10, 1);
+            @include adaptiv-value('padding-left', 30, 10, 1);
+            @include adaptiv-value('padding-right', 70, 10, 1);
+            @include adaptiv-value('padding-bottom', 40, 10, 1);
+        }
+
+        .connect-banners {
+            @include adaptiv-value('padding-top', 40, 10, 1);
+            @include adaptiv-value('padding-bottom', 140, 100, 1);
+            @include adaptiv-value('padding-left', 70, 15, 1);
+            @include adaptiv-value('padding-right', 100, 15, 1);
+        }
+    }
 }
 
 .menu-banners {
     background-color: var(--blue);
-    @include adaptiv-value('padding-top', 50, 10, 1);
+    @include adaptiv-value('padding-top', 20, 10, 1);
     @include adaptiv-value('padding-left', 50, 10, 1);
     @include adaptiv-value('padding-right', 110, 10, 1);
-    @include adaptiv-value('padding-bottom', 108, 10, 1);
+    @include adaptiv-value('padding-bottom', 40, 10, 1);
 
     &__title {
         font-family: 'Oswald', sans-serif;
@@ -580,13 +637,14 @@ html.dark {
         position: relative;
         z-index: 1;
         @include adaptiv-value('margin-bottom', 20, 10, 1);
+
         img {
             /* margin-top: -30%;
             margin-bottom: -30%; */
-            /* max-width: 100%; */
+            max-width: 100%;
             object-fit: contain;
-           /*  max-height: 100%; */
-           /*  margin-top: -70%;
+            /*  max-height: 100%; */
+            /*  margin-top: -70%;
             margin-bottom: -70%; */
         }
 
@@ -613,11 +671,18 @@ html.dark {
 
 .connect-banners {
     background-color: #fff;
-    @include adaptiv-value('padding-top', 71, 10, 1);
-    @include adaptiv-value('padding-bottom', 188, 100, 1);
+    @include adaptiv-value('padding-top', 30, 20, 1);
+    @include adaptiv-value('padding-bottom', 10, 10, 1);
     @include adaptiv-value('padding-left', 105, 15, 1);
     @include adaptiv-value('padding-right', 167, 15, 1);
     border: rem(1) solid var(--black);
+
+    @media (max-width: 550px) {
+        padding-top: rem(50);
+        padding-bottom: rem(50);
+        @include adaptiv-value('padding-left', 160, 50, 1);
+    }
+
     position: relative;
 
     &__title {
@@ -640,6 +705,7 @@ html.dark {
         background-color: var(--blue);
         position: relative;
         z-index: 2;
+
         @media (any-hover: hover) {
             &:hover {
                 background-color: #3ab8a5;
@@ -651,7 +717,7 @@ html.dark {
         position: absolute;
         bottom: 0;
         left: 0;
-        width: perc(100, 580);
+        width: perc(70, 580);
 
         img {
             width: 100%;
@@ -668,7 +734,7 @@ html.dark {
         position: absolute;
         bottom: perc(-23, 508);
         right: 0;
-        width: perc(249, 580);
+        width: perc(200, 580);
 
         img {
             width: 100%;
@@ -683,7 +749,7 @@ html.dark {
 
 .mobile-banners {
     background-color: var(--red);
-    @include adaptiv-value('padding-top', 50, 25, 1);
+    @include adaptiv-value('padding-top', 30, 25, 1);
     @include adaptiv-value('padding-left', 50, 25, 1);
     @include adaptiv-value('padding-right', 45, 25, 1);
     display: flex;
@@ -697,7 +763,7 @@ html.dark {
         -webkit-text-stroke-color: #fff;
         font-weight: 600;
         text-transform: uppercase;
-        margin-bottom: rem(25);
+        @include adaptiv-value('margin-bottom', 15, 10, 1);
         flex: 1 1 auto;
     }
 
@@ -712,13 +778,18 @@ html.dark {
         color: #FFF;
         text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
         font-family: 'Oswald', sans-serif;
-        @include adaptiv-value('font-size', 30, 25, 1);
+        @include adaptiv-value('font-size', 25, 20, 1);
         font-weight: 400;
         text-transform: uppercase;
     }
 
     &__image {
-        flex: 0 0 perc(342, 480);
+        flex: 0 0 perc(180, 480);
+
+        @media (max-width: $md2) {
+            flex: 0 0 perc(300, 480);
+
+        }
 
         img {
             max-width: 100%;
@@ -854,11 +925,16 @@ html.dark {
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
+        &.error {
+            border: rem(1) solid #ff0000;
+        }
     }
 
     &__option {
         max-width: 100%;
         width: 100%;
+
+
     }
 
     &__row-inputs {
@@ -876,6 +952,7 @@ html.dark {
         @include adaptiv-value('font-size', 20, 16, 1);
         color: #8D8D8D;
         margin-bottom: rem(15);
+        transition: border 0.3s ease;
         width: 100%;
 
         &:focus {
@@ -886,15 +963,46 @@ html.dark {
             flex: 0 1 50%;
 
         }
+
+        &.error {
+            border: rem(1) solid #ff0000;
+
+        }
+    }
+
+
+    &__file{
+        @include adaptiv-value('margin-bottom', 50, 25, 1);
+        
+    }
+
+    &__input-file{
+        display: none;
+    }
+
+    &__label-file{
+        cursor: pointer;
+        display: block;
+        @include adaptiv-value('margin-top', 10, 5, 1);
+        margin-bottom: rem(5);
+    }
+
+    &__name-file {
+        border: 1px solid #8b8b8b;
+        padding: rem(5);
+        border-radius: rem(5);
+        display: inline-block;
+        font-size: rem(12);
+        &.none{
+            display: none;
+        }
     }
 
     &__button-brief {
         background-color: #00000000;
         font-size: rem(14);
         font-weight: 400;
-        @include adaptiv-value('margin-top', 20, 15, 1);
-        @include adaptiv-value('margin-bottom', 50, 25, 1);
-
+        pointer-events: none;
         @media (any-hover: hover) {
             transition: color 0.3s ease;
 
@@ -981,6 +1089,7 @@ html.dark {
         max-width: rem(654);
         text-align: center;
         margin: 0 auto;
+        line-height: 138%;
     }
 }
 
@@ -1100,7 +1209,7 @@ html.dark {
 }
 
 /*=============================================================================================================*/
-.mobile-application-development {
+.service {
     @include adaptiv-value('padding-bottom', 70, 25, 1);
     padding-top: rem(30);
 
@@ -1201,7 +1310,7 @@ html.dark {
             margin: 0 auto;
         }
 
-        .mobile-application-development__image-dark {
+        .service__image-dark {
             display: none;
         }
 
@@ -1479,7 +1588,7 @@ html.dark {
         font-size: rem(6);
         text-transform: uppercase;
         font-weight: 500;
-        max-width: rem(90);
+        max-width: rem(100);
 
         @media (min-width: $md3) {
             margin-bottom: rem(10);
@@ -1658,6 +1767,7 @@ html.dark {
         margin-left: auto;
         margin-bottom: em(20, 150);
         @include adaptiv-value('font-size', 150, 72, 1);
+
         mark {
             font-weight: 400;
         }
@@ -1689,6 +1799,7 @@ html.dark {
         left: 50%;
         transform: translate(-50%, -40%);
         @include adaptiv-value('width', 55, 30, 1);
+
         @media (max-width: 390px) {
             display: none;
         }
@@ -1767,7 +1878,13 @@ html.dark {
         }
     }
 
-    &__text {}
+    &__text {
+        p {
+            &:not(:last-child) {
+                margin-bottom: em(16, 16);
+            }
+        }
+    }
 }
 
 /*=============================================================================================================*/
@@ -1797,7 +1914,7 @@ html.dark {
 
     }
 
-    .mobile-application-development__connect {
+    .service__connect {
         margin-right: rem(33);
     }
 
@@ -1928,12 +2045,29 @@ html.dark {
     &__map {
         border-radius: rem(20);
         background-color: #e7e7e7;
-        padding-bottom: 50%;
+        position: relative;
+        overflow: hidden;
+        height: rem(494);
+
+        iframe {
+            /* position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; */
+            height: rem(494);
+        }
 
         @media (min-width: $md3) {
             flex: 0 0 perc(685, 1210);
         }
     }
+}
+
+.error-element {
+    color: var(--red);
+    font-size: rem(14);
+    margin-top: -10px;
 }
 
 /*=============================================================================================================*/

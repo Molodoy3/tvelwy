@@ -5,29 +5,46 @@
                 <img src='@img/icons/sprite.svg#close' alt='close'>
             </div>
             <h2 class="popup-order__title">Хотите <mark>заказать</mark> услугу?</h2>
-            <div class="popup-order__text">Отправьте свое резюме, расскажите нам о себе и мы обязательно рассмотрим ваше предложение</div>
+            <div class="popup-order__text">Отправьте свое резюме, расскажите нам о себе и мы обязательно рассмотрим ваше
+                предложение</div>
             <form action="#" class="popup-order__form">
                 <div class="popup-order__select__wrap">
-                    <select name="select" class="popup-order__select">
+                    <select name="select" class="popup-order__select req select" id="popup-order-select">
                         <option disabled selected data-default-option>Выберите услугу</option>
-                        <option value="1" class="popup-order__option">услуга 1</option>
-                        <option value="2" class="popup-order__option">услуга 2</option>
-                        <option value="3" class="popup-order__option">услуга 3</option>
-                        <option value="4" class="popup-order__option">услуга 4</option>
+                        <option value="1" class="popup-order__option" data-id-option-select="cloud-solutions-and-hosting">Cloud решения и хостинг</option>
+                        <option value="2" class="popup-order__option" data-id-option-select="game-development">Разработка игр</option>
+                        <option value="3" class="popup-order__option" data-id-option-select="mobile-application-development">Разработка мобильных приложений</option>
+                        <option value="3" class="popup-order__option" data-id-option-select="it-consulting">IT consulting</option>
+                        <option value="3" class="popup-order__option" data-id-option-select="seo-optimisation">Seo оптимизация</option>
+                        <option value="3" class="popup-order__option" data-id-option-select="UX-UI-design">UX/UI дизайн</option>
+                        <option value="3" class="popup-order__option" data-id-option-select="web-development-agency">Разработка веб приложений</option>
+                        <option value="3" class="popup-order__option" data-id-option-select="website-development">Разработка сайтов</option>
                     </select>
                 </div>
                 <div class="popup-order__row-inputs">
-                    <input type="text" name="name" placeholder="Ваше имя" class="popup-order__input popup-order__input_small">
-                    <input type="email" name="email" placeholder="E-mail" class="popup-order__input popup-order__input_small">
+                    <input type="text" name="name" placeholder="Ваше имя"
+                        class="popup-order__input popup-order__input_small req">
+                    <input type="text" name="contact" placeholder="E-mail или телефон"
+                        class="popup-order__input popup-order__input_small req contact">
                 </div>
-                <input type="text" name="description" placeholder="Описание проекта" class="popup-order__input">
-                <button class="popup-order__button-brief" type="button">+ прикрепить бриф о проекте</button>
+                <input type="text" name="description" placeholder="Описание проекта" class="popup-order__input req" data-validate-min="100" data-text-error="Количество символов: 100-300" maxlength="300">
+                <div class="popup-order__file">
+                    <input type="file" id="imageInput" accept=".pdf, .txt, .jpg" class="popup-order__input-file">
+                    <label for="imageInput" class="popup-order__label-file">
+                      <button type="button" class="popup-order__button-brief">+ прикрепить бриф о проекте</button>
+                    </label>
+                    <div class="popup-order__name-file none"></div>
+                </div>
                 <div class="popup-order__bottom">
                     <button class="popup-order__button" type="submit" name="submit">отправить</button>
-                    <div class="popup-order__policy">Нажимая на кнопку, Вы соглашаетесь с уловиями 
-                        <a href="">Политики конфиденциальности</a></div>
+                    <div class="popup-order__policy">Нажимая на кнопку, Вы соглашаетесь с уловиями
+                        <a href="">Политики конфиденциальности</a>
+                    </div>
                 </div>
             </form>
+            <!-- <script>!function (a, m, o, c, r, m) { a[o + c] = a[o + c] || { setMeta: function (p) { this.params = (this.params || []).concat([p]) } }, a[o + r] = a[o + r] || function (f) { a[o + r].f = (a[o + r].f || []).concat([f]) }, a[o + r]({ id: "1224186", hash: "5dd02fd8e56ec0bd2c0dfc0e937fec28", locale: "ru" }), a[o + m] = a[o + m] || function (f, k) { a[o + m].f = (a[o + m].f || []).concat([[f, k]]) } }(window, 0, "amo_forms_", "params", "load", "loaded");</script>
+            <script id="amoforms_script_1224186" async="async" charset="utf-8"
+                src="https://forms.amocrm.ru/forms/assets/js/amoforms.js?1697373834"></script> -->
         </div>
     </div>
 </section>

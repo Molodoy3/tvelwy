@@ -8,6 +8,9 @@ import { Navigation } from 'swiper/modules';
 import { delegationClick } from './modules/script.js';
 /* import { headerScroll } from './modules/script.js'; */
 import { closeMenu } from './modules/script.js';
+
+import { formValidate } from './modules/formValidate.js';
+
 //?Функция определения мобильного устройства
 //import { isMobile } from "./modules/functions";
 //?Импортирование плавного скролла
@@ -24,7 +27,7 @@ window.addEventListener("load", windowLoad);
 function windowLoad() {
 
     //const j = new customOpenImage();
-    
+    formValidate();
     delegationClick();
     /* headerScroll(); */
     /* initSpollers(); */
@@ -68,7 +71,7 @@ function windowLoad() {
 
 
     const slider = document.querySelector('.cases-slider__slider');
-    if(slider){
+    if (slider) {
         new Swiper(slider, {
             modules: [Navigation],
             wrapperClass: 'cases-slider__wrapper',
@@ -88,27 +91,28 @@ function windowLoad() {
         });
     }
 
-    //?Создание плавного скролла
-    /*     SmoothScroll({
-            // Время скролла 400 = 0.4 секунды
-            animationTime: 600,
-            // Размер шага в пикселях
-            stepSize: 75,
-            // Дополнительные настройки:
-            // Ускорение
-            accelerationDelta: 30,
-            // Максимальное ускорение
-            accelerationMax: 2,
-            // Поддержка клавиатуры
-            keyboardSupport: true,
-            // Шаг скролла стрелками на клавиатуре в пикселях
-            arrowScroll: 50,
-            // Pulse (less tweakable)
-            // ratio of "tail" to "acceleration"
-            pulseAlgorithm: true,
-            pulseScale: 4,
-            pulseNormalize: 1,
-            // Поддержка тачпада
-            touchpadSupport: true,
-        }); */
+
+    //Иницилизация выбранной опции в форме
+    const idOption = document.querySelector("[data-id-option]");
+    if (idOption) {
+        const popupOrderSelect = document.querySelector(`[data-id-option-select = "${idOption.dataset.idOption}"]`);
+        if (popupOrderSelect) {
+            popupOrderSelect.selected = true;
+        }
+
+    }
+
+    //добавление названия файла
+    const fileInput = document.getElementById('imageInput');
+    if (fileInput) {
+        fileInput.addEventListener('change', (event) => {
+            const selectedFile = event.target.files[0];
+            const fileName = selectedFile.name;
+            const feelForName = document.querySelector(".popup-order__name-file");
+            if (feelForName) {
+                feelForName.classList.remove('none');
+                feelForName.textContent = fileName;
+            }
+        });
+    }
 }

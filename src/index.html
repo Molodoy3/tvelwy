@@ -17,13 +17,14 @@
                         </picture>
                         <picture>
                             <source srcset='@img/welcomeBlock/telephon-dark.webp' type='image/webp'>
-                            <img class="welcome-block__image-dark" src='@img/welcomeBlock/telephon-dark.png' alt='telephon'>
+                            <img class="welcome-block__image-dark" src='@img/welcomeBlock/telephon-dark.png'
+                                alt='telephon'>
                         </picture>
                     </div>
                     <div class="welcome-block__content">
-                        <h1 class="welcome-block__title title">мы — <mark>твэлви</mark></h1>
-                        <div class="welcome-block__text"><mark>Онлайн — агенство</mark> полного цикла по разработке
-                            сайтов, приложений и интернет-продуктов</div>
+                        <h1 class="welcome-block__title title">КОМПАНИЯ<br> <mark>ТВЭЛВИ</mark></h1>
+                        <div class="welcome-block__text"><mark>IT — компания</mark> полного цикла по разработке сайтов,
+                            приложений и интернет-продуктов</div>
                         <div class="welcome-block__links">
                             <a href="" class="welcome-block__button">
                                 Связаться с нами
@@ -39,11 +40,13 @@
                                 <li><a href="" class="welcome-block__link">
                                         <picture>
                                             <source srcset='@img/iconsPng/watsApp.webp' type='image/webp'>
-                                            <img src='@img/iconsPng/watsApp.png' alt='watsApp' class="welcome-block__watsApp-light">
+                                            <img src='@img/iconsPng/watsApp.png' alt='watsApp'
+                                                class="welcome-block__watsApp-light">
                                         </picture>
                                         <picture>
                                             <source srcset='@img/iconsPng/watsApp-dark.webp' type='image/webp'>
-                                            <img src='@img/iconsPng/watsApp-dark.png' alt='watsApp' class="welcome-block__watsApp-dark">
+                                            <img src='@img/iconsPng/watsApp-dark.png' alt='watsApp'
+                                                class="welcome-block__watsApp-dark">
                                         </picture>
                                     </a></li>
                             </ul>
@@ -51,65 +54,12 @@
                     </div>
                 </div>
             </section>
-            <section class="banners">
-                <div class='banners__container'>
-                    <div class="banners__item menu-banners">
-                        <h3 class="menu-banners__title">
-                            Menu
-                        </h3>
-                        <div class="menu-banners__text">Мы предоставляем полный спект услуг от рекламы до разработки
-                            проекта и его ведения</div>
-                        <a href="" class="banners__button menu-banners__button">Выбрать услугу</a>
-                    </div>
-                    <a href="" class="banners__item more-banners">
-                        <div class="more-banners__img">
-                            <img src='@img/banners/text-more.svg' alt='text'>
-                        </div>
-                        <div class="more-banners__background">
-                            <picture>
-                                <source srcset='@img/banners/backgound.webp' type='image/webp'>
-                                <img src='@img/banners/backgound.jpg' alt='backgound'>
-                            </picture>
-                        </div>
-                    </a>
-                    <div class="banners__item connect-banners">
-                        <div class="connect-banners__title">
-                            <span>связаться</span> с нами
-                        </div>
-                        <a href="" class="banners__button connect-banners__button">Обратная связь</a>
-                        <div class="connect-banners__hand-small">
-                            <picture>
-                                <source srcset='@img/banners/hand-small.webp' type='image/webp'>
-                                <img src='@img/banners/hand-small.png' alt='hand'>
-                            </picture>
-                        </div>
-                        <div class="connect-banners__hand-big">
-                            <picture>
-                                <source srcset='@img/banners/hand-big.webp' type='image/webp'>
-                                <img src='@img/banners/hand-big.png' alt='hand'>
-                            </picture>
-                        </div>
-                    </div>
-                    <a href="" class="banners__item mobile-banners">
-                        <h3 class="mobile-banners__title">мобилка</h3>
-                        <div class="mobile-banners__decor">
-                            <div class="mobile-banners__text">качай.<br>
-                                наше.<br>
-                                приложение.</div>
-                            <div class="mobile-banners__image">
-                                <picture>
-                                    <source srcset='@img/banners/telephon.webp' type='image/webp'>
-                                    <img src='@img/banners/telephon.png' alt='telephon'>
-                                </picture>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </section>
+            @@include('html/banners.html')
         </div>
         @@include('html/footer.html')
         @@include('html/popup.html')
-    </div>
-    <script src="js/app.min.js"></script>
+        </div>
+        <script src="js/app.min.js"></script>
 </body>
+
 </html>

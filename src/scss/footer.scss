@@ -69,27 +69,47 @@
     &__bottom {
         font-size: 13px;
     }
+    &__rights{
+        opacity: 0.5;
+    }
+    &__politick{
+        opacity: 0.5;
+        @media (any-hover: hover) {
+            transition: opacity 0.3s ease;
+            &:hover{
+                opacity: 1;
+            }
+        }
+    }
 
 }
 
 .menu-footer {
     display: flex;
-    @include adaptiv-value('column-gap', 83, 20, 1);
+    @include adaptiv-value('column-gap', 132, 20, 1);
     row-gap: rem(5);
     flex-wrap: wrap;
+
     @media (max-width: $md3){
         margin-bottom: rem(20);
     }
     &__col {}
 
     &__label {
+        color: inherit;
         font-weight: 700;
         @include adaptiv-value('margin-bottom', 21, 12, 1);
         background-color: #00000000;
         font-size: rem(13);
-
     }
-
+    a.menu-footer__label{
+        @media (any-hover: hover) {
+            transition: color 0.3s ease;
+            &:hover{
+                color: var(--blue);
+            }
+        }
+    }
     &__list {
         a {
             font-size: rem(13);
