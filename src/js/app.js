@@ -23,8 +23,13 @@ import { formValidate } from './modules/formValidate.js';
 
 /* import {initSpollers} from './modules/spollers.js'; */
 
+
+
+
 window.addEventListener("load", windowLoad);
 function windowLoad() {
+
+
 
     //const j = new customOpenImage();
     formValidate();

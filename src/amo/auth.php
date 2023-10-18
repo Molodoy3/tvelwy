@@ -11,14 +11,6 @@ $data = [
   'redirect_uri'  => $redirect_uri,
 ];
 
-if (extension_loaded('curl')) {
-    // Расширение curl поддерживается
-    echo "Curl is supported!";
-} else {
-    // Расширение curl не поддерживается
-    echo "Curl is not supported!";
-}
-
 $curl = curl_init();
 curl_setopt($curl,CURLOPT_RETURNTRANSFER, true);
 curl_setopt($curl,CURLOPT_USERAGENT,'amoCRM-oAuth-client/1.0');
@@ -45,7 +37,7 @@ $errors = [
   503 => 'Service unavailable.'
 ];
 
-if ($code < 200 || $code > 204) die( "Error $code. " . (isset($errors[$code]) ? $errors[$code] : 'Undefined error') );
+//if ($code < 200 || $code > 204) die( "Error $code. " . (isset($errors[$code]) ? $errors[$code] : 'Undefined error') );
 
 
 $response = json_decode($out, true);
