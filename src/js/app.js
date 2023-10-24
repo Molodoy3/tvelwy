@@ -97,6 +97,7 @@ function windowLoad() {
     }
 
 
+    //с помощью объекта MutationObserver делал обработчик события на изменения класса у основного слайда, чтобы скрывать другие слайды, когда основной активен, так как нужна прозрачность, но не пригадилось
     /* const mainSlideFromMainSlider = document.querySelector(".slide-welcome-block_main");
     const otherSlides = document.querySelectorAll(".slide-welcome-block_banner");
 
@@ -149,13 +150,13 @@ function windowLoad() {
                 enabled: true,
             },
             effect: 'fade',
-            autoplay: {
+            /* autoplay: {
                 delay: 6000,
-            },
+            }, */
             direction: 'horizontal',
             slidesPerView: 1,
             loop: false,
-            speed: 800,
+            speed: 600,
             spaceBetween: 30,
             simulateTouch: simulateTouch,
             observer: true,

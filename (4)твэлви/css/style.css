@@ -546,6 +546,10 @@ html.dark .cases-slider__navigate-button svg {
   position: relative;
 }
 
+.welcome-block__slider {
+  position: relative;
+}
+
 .welcome-block__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -650,6 +654,7 @@ html.dark .cases-slider__navigate-button svg {
 
 .slide-welcome-block {
   visibility: hidden;
+  opacity: 0 !important;
   position: relative;
   background-color: #fff;
   display: -webkit-box;
@@ -661,7 +666,16 @@ html.dark .cases-slider__navigate-button svg {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: calc(100vh - 107px);
+  /* min-height: calc(70vh - 107px);
+  @media (max-width: $md1){
+      min-height: calc(100vh - 100px);
+  }
+  @media (max-width: $md3){
+      min-height: calc(100vh - 80px);
+  }
+  @media (max-width: $md4){
+      min-height: calc(100vh - 65px);
+  } */
 }
 
 .slide-welcome-block_main {
@@ -684,8 +698,8 @@ html.dark .cases-slider__navigate-button svg {
   -webkit-column-gap: 0.9375rem;
      -moz-column-gap: 0.9375rem;
           column-gap: 0.9375rem;
-  padding-top: 6.25rem;
-  padding-bottom: 6.25rem;
+  padding-top: 3.125rem;
+  padding-bottom: 5.625rem;
 }
 
 .slide-welcome-block__container > img,
@@ -700,8 +714,8 @@ html.dark .cases-slider__navigate-button svg {
 }
 
 .slide-welcome-block .welcome-block__container {
-  padding-bottom: 6.25rem;
-  padding-top: 6.25rem;
+  padding-bottom: 5.625rem;
+  padding-top: 3.125rem;
 }
 
 .slide-welcome-block_1 .slide-welcome-block__container {
@@ -808,7 +822,19 @@ html.dark .cases-slider__navigate-button svg {
 }
 
 .welcome-block {
+  /* @media (max-width: $md2) {
+      margin-bottom: rem(25);
+  }
   min-height: calc(100vh - 107px);
+  @media (max-width: $md1){
+      min-height: calc(100vh - 100px);
+  }
+  @media (max-width: $md3){
+      min-height: calc(100vh - 80px);
+  }
+  @media (max-width: $md4){
+      min-height: calc(100vh - 65px);
+  } */
   /* @media (min-width: $md2) {
       min-height: 45vw;
   } */
@@ -821,6 +847,7 @@ html.dark .cases-slider__navigate-button svg {
   -webkit-column-gap: 0.9375rem;
      -moz-column-gap: 0.9375rem;
           column-gap: 0.9375rem;
+  background-color: transparent;
   /* @media (min-width: $md2) {
       padding-top: rem(30);
   }
@@ -960,6 +987,7 @@ html.dark .cases-slider__navigate-button svg {
 .swiper-slide-active {
   z-index: 150;
   visibility: visible;
+  opacity: 1 !important;
 }
 
 /*=============================================================================================================*/
@@ -2646,19 +2674,11 @@ html.dark .cases-slider__navigate-button svg {
   }
 
   .slide-welcome-block__container {
-    padding-top: calc(20px + 80 * (100vw - 320px) / 1600);
-  }
-
-  .slide-welcome-block__container {
-    padding-bottom: calc(90px + 10 * (100vw - 320px) / 1600);
+    padding-top: calc(20px + 30 * (100vw - 320px) / 1600);
   }
 
   .slide-welcome-block .welcome-block__container {
-    padding-bottom: calc(90px + 10 * (100vw - 320px) / 1600);
-  }
-
-  .slide-welcome-block .welcome-block__container {
-    padding-top: calc(20px + 80 * (100vw - 320px) / 1600);
+    padding-top: calc(20px + 30 * (100vw - 320px) / 1600);
   }
 
   .slide-welcome-block_1 .slide-welcome-block__container {
@@ -3326,23 +3346,11 @@ html.dark .cases-slider__navigate-button svg {
   .header__container {
     min-height: 6.25rem;
   }
-
-  .slide-welcome-block {
-    min-height: calc(100vh - 100px);
-  }
-
-  .welcome-block {
-    min-height: calc(100vh - 100px);
-  }
 }
 
 @media (max-width: 62.06125rem) {
   .welcome-block__arrow {
     opacity: 0.8;
-  }
-
-  .welcome-block {
-    margin-bottom: 1.5625rem;
   }
 
   .mobile-banners__image {
@@ -3416,16 +3424,8 @@ html.dark .cases-slider__navigate-button svg {
     margin-bottom: 0.9375rem;
   }
 
-  .slide-welcome-block {
-    min-height: calc(100vh - 80px);
-  }
-
   .slide-welcome-block__image img {
     max-height: 15.625rem;
-  }
-
-  .welcome-block {
-    min-height: calc(100vh - 80px);
   }
 
   .welcome-block__container {
@@ -3521,14 +3521,6 @@ html.dark .cases-slider__navigate-button svg {
 @media (max-width: 29.99875rem) {
   .header__container {
     min-height: 4.0625rem;
-  }
-
-  .slide-welcome-block {
-    min-height: calc(100vh - 65px);
-  }
-
-  .welcome-block {
-    min-height: calc(100vh - 65px);
   }
 
   .welcome-block__button {

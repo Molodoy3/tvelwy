@@ -343,8 +343,10 @@ html.dark {
 /*=============================================================================================================*/
 .welcome-block {
     position: relative;
-
-    &__wrapper {
+    &__slider{
+        position: relative;
+    }
+    &__wrapper {    
         display: flex;
     }
 
@@ -451,13 +453,14 @@ html.dark {
 }
 .slide-welcome-block {
     visibility: hidden;
-
+    opacity: 0 !important;
     position: relative;
     background-color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 107px);
+    
+    /* min-height: calc(70vh - 107px);
     @media (max-width: $md1){
         min-height: calc(100vh - 100px);
     }
@@ -466,7 +469,7 @@ html.dark {
     }
     @media (max-width: $md4){
         min-height: calc(100vh - 65px);
-    }
+    } */
     &_main{
         background-color: transparent;
     }
@@ -491,12 +494,12 @@ html.dark {
             flex-wrap: wrap;
             justify-content: center;
         }
-        @include adaptiv-value('padding-top', 100, 20, 1);
-        @include adaptiv-value('padding-bottom', 100, 90, 1);
+        @include adaptiv-value('padding-top', 50, 20, 1);
+        padding-bottom: rem(90);
     }
     .welcome-block__container{
-        @include adaptiv-value('padding-bottom', 100, 90, 1);
-        @include adaptiv-value('padding-top', 100, 20, 1);
+        padding-bottom: rem(90);
+        @include adaptiv-value('padding-top', 50, 20, 1);
 
     }
     &_1 {
@@ -638,11 +641,9 @@ html.dark {
 }
 
 .welcome-block {
-    @media (max-width: $md2) {
+    /* @media (max-width: $md2) {
         margin-bottom: rem(25);
     }
-
-    //max-height: rem(1015);
     min-height: calc(100vh - 107px);
     @media (max-width: $md1){
         min-height: calc(100vh - 100px);
@@ -652,7 +653,7 @@ html.dark {
     }
     @media (max-width: $md4){
         min-height: calc(100vh - 65px);
-    }
+    } */
 
     //min-height: 40vw;
 
@@ -668,7 +669,7 @@ html.dark {
     &__container {
         display: flex;
         column-gap: rem(15);
-
+        background-color: transparent;
         /* @media (min-width: $md2) {
             padding-top: rem(30);
         }
@@ -836,6 +837,7 @@ html.dark {
 .swiper-slide-active{
     z-index: 150;
     visibility: visible;
+    opacity: 1 !important;
 }
 /*=============================================================================================================*/
 .banners {
