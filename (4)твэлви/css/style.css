@@ -1239,7 +1239,7 @@ html.dark .cases-slider__navigate-button svg {
 }
 
 .popup-order.open {
-  z-index: 150;
+  z-index: 700;
   overflow-y: auto;
 }
 
