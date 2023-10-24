@@ -8,52 +8,196 @@
     <section class="wrapper wrapper_main">
         @@include('html/header.html')
         <div class="page">
-            <section class="welcome-block">
-                <div class='welcome-block__container'>
-                    <div class="welcome-block__image">
-                        <picture>
-                            <source srcset='@img/welcomeBlock/telephon.webp' type='image/webp'>
-                            <img class="welcome-block__image-light" src='@img/welcomeBlock/telephon.png' alt='telephon'>
-                        </picture>
-                        <picture>
-                            <source srcset='@img/welcomeBlock/telephon-dark.webp' type='image/webp'>
-                            <img class="welcome-block__image-dark" src='@img/welcomeBlock/telephon-dark.png'
-                                alt='telephon'>
-                        </picture>
+            <div class="welcome-block">
+                <div class="welcome-block__slider">
+
+                    <!--! ссылки, адаптация всего сладейра, правка каждого баннера отдельно, прозрачность основного слайдера, на моб версии вернуть перелистование пальцем-->
+
+                    <div class="welcome-block__wrapper">
+                        <section class="welcome-block__slide slide-welcome-block slide-welcome-block_1 slide-welcome-block_banner">
+                            <div class="slide-welcome-block__container">
+                                <img src='@img/welcomeBlock/banners/background-1.svg' alt='background'>
+                                <div class="slide-welcome-block__col">
+                                    <div class="slide-welcome-block__image">
+                                        <img src='@img/welcomeBlock/banners/1.svg' alt='img-banners'>
+                                    </div>
+                                </div>
+                                <div class="slide-welcome-block__col">
+                                    <div class="slide-welcome-block__content">
+                                        <div class="slide-welcome-block__logo"><img src='@img/logo.svg' alt='logo'>
+                                        </div>
+                                        <h3 class="slide-welcome-block__title slide-welcome-block__title_big">
+                                            РАЗРАБОТКА<br>
+                                            ВЕБ ПРИЛОЖЕНИЙ</h3>
+                                        <a href="web-development-agency.html"
+                                            class="slide-welcome-block__button slide-welcome-block__button">Подробнее</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="welcome-block__slide slide-welcome-block slide-welcome-block_2 slide-welcome-block_banner">
+                            <div class="slide-welcome-block__container">
+                                <img src='@img/welcomeBlock/banners/background-2.svg' alt='background'>
+                                <div class="slide-welcome-block__col slide-welcome-block__col_content">
+                                    <div class="slide-welcome-block__content">
+                                        <div class="slide-welcome-block__logo"><img src='@img/logo.svg' alt='logo'>
+                                        </div>
+                                        <h3 class="slide-welcome-block__title slide-welcome-block__title_small">
+                                            РАЗРАБОТКА<br>
+                                            МОБИЛЬНЫХ ПРИЛОЖЕНИЙ</h3>
+                                        <a href="mobile-application-development.html"
+                                            class="slide-welcome-block__button slide-welcome-block__button slide-welcome-block__button_blue">Подробнее</a>
+                                    </div>
+                                </div>
+                                <div class="slide-welcome-block__col">
+                                    <div class="slide-welcome-block__image">
+                                        <img src='@img/welcomeBlock/banners/2.svg' alt='img-banners'>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="welcome-block__slide slide-welcome-block slide-welcome-block_main">
+                            <div class='welcome-block__container'>
+                                <div class="welcome-block__image">
+                                    <picture>
+                                        <source srcset='@img/welcomeBlock/telephon.webp' type='image/webp'>
+                                        <img class="welcome-block__image-light" src='@img/welcomeBlock/telephon.png'
+                                            alt='telephon'>
+                                    </picture>
+                                    <picture>
+                                        <source srcset='@img/welcomeBlock/telephon-dark.webp' type='image/webp'>
+                                        <img class="welcome-block__image-dark" src='@img/welcomeBlock/telephon-dark.png'
+                                            alt='telephon'>
+                                    </picture>
+                                </div>
+                                <div class="welcome-block__content">
+                                    <h1 class="welcome-block__title title">КОМПАНИЯ<br> <mark>ТВЭЛВИ</mark></h1>
+                                    <div class="welcome-block__text"><mark>IT — компания</mark> полного цикла по
+                                        разработке сайтов,
+                                        приложений и интернет-продуктов</div>
+                                    <div class="welcome-block__links">
+                                        <a href="" class="welcome-block__button">
+                                            Связаться с нами
+                                            <img src='@img/icons/sprite.svg#arrow' alt='arrow'>
+                                        </a>
+                                        <ul class="welcome-block__social-list">
+                                            <li><a href="https://wa.me/message/GEJZ2WL6QLI2K1"
+                                                    class="welcome-block__link">
+                                                    <picture>
+                                                        <source srcset='@img/iconsPng/telegram-blue.webp'
+                                                            type='image/webp'>
+                                                        <img src='@img/iconsPng/telegram-blue.png' alt='telegram'>
+                                                    </picture>
+                                                </a></li>
+                                            <li><a href="https://t.me/tvelvi_it" class="welcome-block__link">
+                                                    <picture>
+                                                        <source srcset='@img/iconsPng/watsApp.webp' type='image/webp'>
+                                                        <img src='@img/iconsPng/watsApp.png' alt='watsApp'
+                                                            class="welcome-block__watsApp-light">
+                                                    </picture>
+                                                    <picture>
+                                                        <source srcset='@img/iconsPng/watsApp-dark.webp'
+                                                            type='image/webp'>
+                                                        <img src='@img/iconsPng/watsApp-dark.png' alt='watsApp'
+                                                            class="welcome-block__watsApp-dark">
+                                                    </picture>
+                                                </a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="welcome-block__slide slide-welcome-block slide-welcome-block_3 slide-welcome-block_banner">
+                            <div class="slide-welcome-block__container">
+                                <img src='@img/welcomeBlock/banners/background-3.svg' alt='background'>
+                                <div class="slide-welcome-block__col">
+                                    <div class="slide-welcome-block__content">
+                                        <div class="slide-welcome-block__logo"><img src='@img/logo.svg' alt='logo'>
+                                        </div>
+                                        <h3 class="slide-welcome-block__title">
+                                            РАЗРАБОТКА ИГР</h3>
+                                        <a href="game-development.html"
+                                            class="slide-welcome-block__button slide-welcome-block__button slide-welcome-block__button_blue">Подробнее</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="welcome-block__slide slide-welcome-block slide-welcome-block_4 slide-welcome-block_banner">
+                            <div class="slide-welcome-block__container">
+                                <img src='@img/welcomeBlock/banners/background-4.svg' alt='background'>
+                                <div class="slide-welcome-block__col">
+                                    <div class="slide-welcome-block__image">
+                                        <img src='@img/welcomeBlock/banners/4.svg' alt='img-banners'>
+                                    </div>
+                                </div>
+                                <div class="slide-welcome-block__col">
+                                    <div class="slide-welcome-block__content">
+                                        <div class="slide-welcome-block__logo"><img src='@img/logo.svg' alt='logo'>
+                                        </div>
+                                        <h3 class="slide-welcome-block__title">
+                                            SEO ОПТИМИЗАЦИЯ<br>
+                                            ОТ ТВЭЛВИ</h3>
+                                        <a href="seo-optimisation.html"
+                                            class="slide-welcome-block__button slide-welcome-block__button slide-welcome-block__button_blue">Подробнее</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="welcome-block__slide slide-welcome-block slide-welcome-block_5 slide-welcome-block_banner">
+                            <div class="slide-welcome-block__container">
+                                <img src='@img/welcomeBlock/banners/background-5.svg' alt='background'>
+                                <div class="slide-welcome-block__col">
+                                    <div class="slide-welcome-block__content">
+                                        <div class="slide-welcome-block__logo"><img src='@img/logo.svg' alt='logo'>
+                                        </div>
+                                        <h3 class="slide-welcome-block__title slide-welcome-block__title_big">
+                                            РАЗРАБОТКА<br>
+                                            САЙТОВ </h3>
+                                        <a href="website-development.html"
+                                            class="slide-welcome-block__button slide-welcome-block__button">Подробнее</a>
+                                    </div>
+                                </div>
+                                <div class="slide-welcome-block__col">
+                                    <div class="slide-welcome-block__image">
+                                        <img src='@img/welcomeBlock/banners/5.svg' alt='img-banners'>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="welcome-block__slide slide-welcome-block slide-welcome-block_6 slide-welcome-block_banner">
+                            <div class="slide-welcome-block__container">
+                                <picture>
+                                    <source srcset='@img/welcomeBlock/banners/background-6.webp' type='image/webp'>
+                                    <img src='@img/welcomeBlock/banners/background-6.jpg' alt='background'>
+                                </picture>
+                                <div class="slide-welcome-block__col">
+                                    <div class="slide-welcome-block__image">
+                                        <img src='@img/welcomeBlock/banners/6.svg' alt='img-banners'>
+                                    </div>
+                                </div>
+                                <div class="slide-welcome-block__col slide-welcome-block__col_content">
+                                    <div class="slide-welcome-block__content">
+                                        <div class="slide-welcome-block__logo"><img src='@img/logo.svg' alt='logo'>
+                                        </div>
+                                        <h3 class="slide-welcome-block__title slide-welcome-block__title_small">
+                                            работа в компании<br>
+                                            ТВЭЛВИ</h3>
+                                        <a href=""
+                                            class="slide-welcome-block__button slide-welcome-block__button">Подробнее</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
                     </div>
-                    <div class="welcome-block__content">
-                        <h1 class="welcome-block__title title">КОМПАНИЯ<br> <mark>ТВЭЛВИ</mark></h1>
-                        <div class="welcome-block__text"><mark>IT — компания</mark> полного цикла по разработке сайтов,
-                            приложений и интернет-продуктов</div>
-                        <div class="welcome-block__links">
-                            <a href="" class="welcome-block__button">
-                                Связаться с нами
-                                <img src='@img/icons/sprite.svg#arrow' alt='arrow'>
-                            </a>
-                            <ul class="welcome-block__social-list">
-                                <li><a href="https://wa.me/message/GEJZ2WL6QLI2K1" class="welcome-block__link">
-                                        <picture>
-                                            <source srcset='@img/iconsPng/telegram-blue.webp' type='image/webp'>
-                                            <img src='@img/iconsPng/telegram-blue.png' alt='telegram'>
-                                        </picture>
-                                    </a></li>
-                                <li><a href="https://t.me/tvelvi_it" class="welcome-block__link">
-                                        <picture>
-                                            <source srcset='@img/iconsPng/watsApp.webp' type='image/webp'>
-                                            <img src='@img/iconsPng/watsApp.png' alt='watsApp'
-                                                class="welcome-block__watsApp-light">
-                                        </picture>
-                                        <picture>
-                                            <source srcset='@img/iconsPng/watsApp-dark.webp' type='image/webp'>
-                                            <img src='@img/iconsPng/watsApp-dark.png' alt='watsApp'
-                                                class="welcome-block__watsApp-dark">
-                                        </picture>
-                                    </a></li>
-                            </ul>
-                        </div>
+                    <div class="welcome-block__navigate">
+                        <div class="welcome-block__arrow welcome-block__arrow_prev"><img
+                                src='@img/welcomeBlock/banners/arrow.svg' alt='arrow'></div>
+                        <div class="welcome-block__arrow welcome-block__arrow_next"><img
+                                src='@img/welcomeBlock/banners/arrow.svg' alt='arrow'></div>
                     </div>
+                    <div class="welcome-block__pagination"></div>
                 </div>
-            </section>
+            </div>
             @@include('html/banners.html')
         </div>
         @@include('html/footer.html')

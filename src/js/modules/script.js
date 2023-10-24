@@ -12,9 +12,12 @@ export function delegationClick() {
 
             if (menuBody.classList.contains('open')) {
                 window.addEventListener('resize', closeMenu);
+                const activeSlide = document.querySelector(".swiper-slide-active");
             } else {
                 window.removeEventListener('resize', closeMenu);
+                const activeSlide = document.querySelector(".swiper-slide-active");
             }
+
         }
         if (targetElement.closest('.menu__body a')) {
             const activeMenu = targetElement.closest('.menu__body.open');

@@ -3,7 +3,7 @@
 //import customOpenImage from './modules/customOpenImage.js';
 //?Импор Свайпера (снипет swp)
 import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay, Keyboard, EffectFade } from 'swiper/modules';
 //?Основные скрипты (делегирование, шапка)
 import { delegationClick } from './modules/script.js';
 /* import { headerScroll } from './modules/script.js'; */
@@ -90,6 +90,74 @@ function windowLoad() {
             loop: false,
             speed: 800,
             spaceBetween: 30,
+            observer: true,
+            observeParents: true,
+            observeSlideChildren: true
+        });
+    }
+
+
+    /* const mainSlideFromMainSlider = document.querySelector(".slide-welcome-block_main");
+    const otherSlides = document.querySelectorAll(".slide-welcome-block_banner");
+
+    if (mainSlideFromMainSlider && otherSlides.length) {
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.attributeName === 'class') {
+                    if (mainSlideFromMainSlider.classList.contains("swiper-slide-active")) {
+                        otherSlides.forEach(slide => {
+                            slide.classList.add('unvisible');
+                            console.log("add unvisible");
+                        });
+                        mainSlideFromMainSlider.dataset.activeMainSlide = '';
+                    } else if (mainSlideFromMainSlider.dataset.activeMainSlide == ''){
+                        console.log(1);
+                        otherSlides.forEach(slide => {
+                            slide.classList.remove('unvisible');
+                            console.log("remove unvisible");
+
+                        });
+                        delete mainSlideFromMainSlider.dataset.activeMainSlide;
+                    }
+                }
+            });
+        });
+        const config = {
+            attributes: true,
+            attributeFilter: ['class']
+        };
+        observer.observe(mainSlideFromMainSlider, config);
+    } */
+
+    const simulateTouch = /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent) ? true : false;
+    const MainSlider = document.querySelector('.welcome-block__slider');
+    if (MainSlider) {
+        new Swiper(MainSlider, {
+            modules: [Navigation, Pagination, Autoplay, Keyboard, EffectFade],
+            wrapperClass: 'welcome-block__wrapper',
+            slideClass: 'welcome-block__slide',
+            navigation: {
+                prevEl: '.welcome-block__arrow_prev',
+                nextEl: '.welcome-block__arrow_next',
+            },
+            autoHeight: true,
+            pagination: {
+                el: '.welcome-block__pagination',
+                clickable: true
+            },
+            keyboard: {
+                enabled: true,
+            },
+            effect: 'fade',
+            autoplay: {
+                delay: 6000,
+            },
+            direction: 'horizontal',
+            slidesPerView: 1,
+            loop: false,
+            speed: 800,
+            spaceBetween: 30,
+            simulateTouch: simulateTouch,
             observer: true,
             observeParents: true,
             observeSlideChildren: true

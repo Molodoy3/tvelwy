@@ -1,6 +1,6 @@
 .header {
     position: relative;
-    z-index: 100;
+    z-index: 600;
     /* position: fixed;
     width: 100%;
     z-index: 100;
@@ -54,7 +54,7 @@
     img{
         max-width: 100%;
     }
-    z-index: 10;
+    z-index: 550;
     position: relative;
 }
 
@@ -75,7 +75,7 @@
         width: rem(30);
         height: rem(18);
         position: relative;
-        z-index: 5;
+        z-index: 550;
         transition: all 0.3s ease 0s;
         cursor: pointer;
 
@@ -127,6 +127,7 @@
     }
 
     &__body {
+        z-index: 500;
         @media (max-width: $md3) {
             position: fixed;
             width: 100%;
