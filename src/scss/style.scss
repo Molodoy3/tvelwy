@@ -494,12 +494,18 @@ html.dark {
             flex-wrap: wrap;
             justify-content: center;
         }
-        @include adaptiv-value('padding-top', 50, 20, 1);
-        padding-bottom: rem(90);
+        @include adaptiv-value('padding-top', 30, 20, 1);
+        @media (max-width: $md2){
+            padding-bottom: rem(90);
+        }
+        padding-bottom: rem(30);
     }
     .welcome-block__container{
-        padding-bottom: rem(90);
-        @include adaptiv-value('padding-top', 50, 20, 1);
+        @media (max-width: $md2){
+            padding-bottom: rem(90);
+        }
+        padding-bottom: rem(50);
+        padding-top: rem(10);
 
     }
     &_1 {
@@ -553,9 +559,9 @@ html.dark {
         .slide-welcome-block__col_content{
             flex: 0 0 perc(437, 1140);
         }
-        .slide-welcome-block__image{
-            margin-left: rem(-150);
-        }
+        /* .slide-welcome-block__image{
+            margin-left: rem(-100);
+        } */
     }
 
     &__col {
@@ -661,9 +667,9 @@ html.dark {
         min-height: 45vw;
     } */
 
-    @media (min-width: $md2) {
-        margin-bottom: rem(50);
-    }
+
+    @include adaptiv-value('margin-bottom', 50, 20, 1);
+
 
 
     &__container {
