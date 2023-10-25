@@ -1657,7 +1657,7 @@ html.dark {
 
 /*=============================================================================================================*/
 .development-content {
-    @include adaptiv-value('margin-bottom', 40, 30, 1);
+    @include adaptiv-value('margin-bottom', 80, 30, 1);
 
     &__container {}
 

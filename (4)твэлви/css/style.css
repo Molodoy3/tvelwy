@@ -1728,7 +1728,7 @@ html.dark .cases-slider__navigate-button svg {
 /*=============================================================================================================*/
 
 .development-content {
-  margin-bottom: 2.5rem;
+  margin-bottom: 5rem;
 }
 
 .development-content__title {
@@ -3051,7 +3051,7 @@ html.dark .cases-slider__navigate-button svg {
   }
 
   .development-content {
-    margin-bottom: calc(30px + 10 * (100vw - 320px) / 1600);
+    margin-bottom: calc(30px + 50 * (100vw - 320px) / 1600);
   }
 
   .development-content__title {

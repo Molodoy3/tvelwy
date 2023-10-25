@@ -59,7 +59,7 @@ function windowLoad() {
             html.classList.add(userTheme);
         }
     }
-    setThemeClass()
+    setThemeClass();
     function changeTheme(saveTheme = false) {
         let currentTheme = html.classList.contains('light') ? 'light' : 'dark';
         let newTheme;
