@@ -185,9 +185,9 @@ body.lock {
 }
 
 .wrapper_service {
-  background: url(../img/icons/sprite.svg#decor-service) no-repeat;
-  background-size: 100%;
-  background-position: top left;
+  /* background: url(../img/icons/sprite.svg#decor-service) no-repeat;
+  background-size: perc(1920, 1920);
+  background-position: top left; */
 }
 
 .wrapper_service .seo-text {
@@ -1682,8 +1682,6 @@ html.dark .cases-slider__navigate-button svg {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -1700,6 +1698,16 @@ html.dark .cases-slider__navigate-button svg {
   font-size: 1.25rem;
   font-weight: 600;
   color: #fff;
+}
+
+.service__stuff-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.9375rem;
 }
 
 .service__connect {
@@ -1763,6 +1771,10 @@ html.dark .cases-slider__navigate-button svg {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.development-content__row:not(:last-child) {
+  margin-bottom: 0.9375rem;
 }
 
 .development-content__item {
@@ -2428,24 +2440,6 @@ html.dark .cases-slider__navigate-button svg {
         align-self: center;
   }
 
-  .service__body {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-column-gap: 1.5625rem;
-       -moz-column-gap: 1.5625rem;
-            column-gap: 1.5625rem;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
-  }
-
-  .service__content {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 66.1157024793%;
-            flex: 0 0 66.1157024793%;
-  }
-
   .form-order-service__form {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2591,6 +2585,26 @@ html.dark .cases-slider__navigate-button svg {
             transform: translate(0, -50%);
     height: 0.125rem;
     border-bottom: 0.125rem dashed var(--black);
+  }
+}
+
+@media (min-width: 780px) {
+  .service__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-column-gap: 1.5625rem;
+       -moz-column-gap: 1.5625rem;
+            column-gap: 1.5625rem;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+
+  .service__content {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 66.1157024793%;
+            flex: 0 0 66.1157024793%;
   }
 }
 
@@ -3031,7 +3045,7 @@ html.dark .cases-slider__navigate-button svg {
   }
 
   .service {
-    padding-bottom: calc(25px + 45 * (100vw - 320px) / 1600);
+    padding-bottom: calc(35px + 35 * (100vw - 320px) / 1600);
   }
 
   .service__title {
@@ -3285,6 +3299,17 @@ html.dark .cases-slider__navigate-button svg {
   }
 }
 
+@media (max-width: 780px) {
+  .service__content {
+    margin-bottom: 1.25rem;
+  }
+
+  .service__image {
+    max-width: 18.75rem;
+    margin: 0 auto;
+  }
+}
+
 @media (max-width: 770px) {
   .services__container {
     grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr));
@@ -3328,6 +3353,33 @@ html.dark .cases-slider__navigate-button svg {
 @media (max-width: 550px) and (max-width: 1920px) {
   .connect-banners {
     padding-left: calc(50px + 110 * (100vw - 320px) / 1600);
+  }
+}
+
+@media (max-width: 510px) {
+  .service__links {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
+  .service__button {
+    display: block;
+    width: 100%;
+  }
+
+  .service__stuff-links {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .service__image {
+    max-width: 12.5rem;
   }
 }
 
@@ -3446,15 +3498,6 @@ html.dark .cases-slider__navigate-button svg {
 
   .welcome-block__content {
     padding-top: 1.5625rem;
-  }
-
-  .service__content {
-    margin-bottom: 1.25rem;
-  }
-
-  .service__image {
-    max-width: 31.25rem;
-    margin: 0 auto;
   }
 
   .form-order-service__inputs {

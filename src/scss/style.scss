@@ -89,9 +89,9 @@ body {
     }
 
     &_service {
-        background: url(../img/icons/sprite.svg#decor-service) no-repeat;
+        /* background: url(../img/icons/sprite.svg#decor-service) no-repeat;
         background-size: perc(1920, 1920);
-        background-position: top left;
+        background-position: top left; */
 
         .seo-text {
             @include adaptiv-value('padding-bottom', 86, 30, 1);
@@ -1543,7 +1543,7 @@ html.dark {
 
 /*=============================================================================================================*/
 .service {
-    @include adaptiv-value('padding-bottom', 70, 25, 1);
+    @include adaptiv-value('padding-bottom', 70, 35, 1);
     padding-top: rem(30);
 
     &__container {}
@@ -1555,7 +1555,7 @@ html.dark {
     }
 
     &__body {
-        @media (min-width: $md3) {
+        @media (min-width: 780px) {
             display: flex;
             column-gap: rem(25);
             align-items: flex-end;
@@ -1563,11 +1563,11 @@ html.dark {
     }
 
     &__content {
-        @media (max-width: $md3) {
+        @media (max-width: 780px) {
             margin-bottom: rem(20);
         }
 
-        @media (min-width: $md3) {
+        @media (min-width: 780px) {
             //! было 637
             flex: 0 0 perc(800, 1210);
         }
@@ -1596,7 +1596,9 @@ html.dark {
 
     &__links {
         display: flex;
-        flex-wrap: wrap;
+        @media (max-width: 510px){
+            flex-wrap: wrap;
+        }
         justify-content: space-between;
         align-items: center;
         gap: rem(15);
@@ -1609,7 +1611,10 @@ html.dark {
         @include adaptiv-value('font-size', 20, 16, 1);
         font-weight: 600;
         color: #fff;
-
+        @media (max-width: 510px){
+            display: block;
+            width: 100%;
+        }
         @media (any-hover: hover) {
             transition: background-color 0.3s ease;
 
@@ -1618,8 +1623,16 @@ html.dark {
             }
         }
     }
-
-    &__connect {
+    &__stuff-links{
+        display: flex;
+        align-items: center;
+        gap: rem(15);
+        @media (max-width: 510px){
+            justify-content: space-between;
+            flex: 1 1 auto;
+        }
+    }
+    &__connect {    
         text-decoration-line: underline;
         color: var(--red) !important;
         @include adaptiv-value('font-size', 20, 16, 1);
@@ -1636,11 +1649,14 @@ html.dark {
     }
 
     &__image {
-        flex: 1 1 auto;
+        flex: 1 1 auto; 
 
-        @media (max-width: $md3) {
-            max-width: rem(500);
+        @media (max-width: 780px) {
+            max-width: rem(300);
             margin: 0 auto;
+        }
+        @media (max-width: 500px){
+            max-width: rem(200);
         }
 
         .service__image-dark {
@@ -1686,7 +1702,9 @@ html.dark {
         @include adaptiv-value('column-gap', 136, 25, 1);
         @include adaptiv-value('row-gap', 38, 15, 1);
         justify-content: center;
-
+        &:not(:last-child) {
+            margin-bottom: rem(15);
+        }
     }
 
     &__item {
