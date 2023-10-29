@@ -881,8 +881,8 @@ html.dark .cases-slider__navigate-button svg {
       min-height: 45vw;
   } */
   /*  @media (min-width: 1000px) {
-       transform: translate(perc(-302, 1210), 0);
-   } */
+      transform: translate(perc(-302, 1210), 0);
+  } */
 }
 
 .welcome-block__image .welcome-block__image-dark {
@@ -1662,7 +1662,22 @@ html.dark .cases-slider__navigate-button svg {
 
 .service__bred-crumbs {
   margin-bottom: 1.25rem;
+  line-height: 150%;
   /* @include adaptiv-value('margin-bottom', 60, 20, 1); */
+}
+
+.service__body {
+  /* @media (min-width: 780px) { */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 1.5625rem;
+     -moz-column-gap: 1.5625rem;
+          column-gap: 1.5625rem;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  /* } */
 }
 
 .service__title {
@@ -2597,18 +2612,6 @@ html.dark .cases-slider__navigate-button svg {
 }
 
 @media (min-width: 780px) {
-  .service__body {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-column-gap: 1.5625rem;
-       -moz-column-gap: 1.5625rem;
-            column-gap: 1.5625rem;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
-  }
-
   .service__content {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 66.1157024793%;
@@ -3277,12 +3280,18 @@ html.dark .cases-slider__navigate-button svg {
   .slide-welcome-block_3 .slide-welcome-block__title {
     color: #000000;
     padding: 0.3125rem 0.625rem;
-    background-color: rgba(255, 255, 255, 0.2745098039);
+    background-color: rgba(135, 201, 84, 0.795);
     border-radius: 0.3125rem;
-    display: inline-block;
     background-clip: border-box;
     background-image: none;
     -webkit-background-clip: border-box;
+    margin-bottom: 0.7777777778em;
+  }
+
+  .slide-welcome-block_3 .slide-welcome-block__button {
+    -webkit-transform: translate(0, 0.9375rem);
+        -ms-transform: translate(0, 0.9375rem);
+            transform: translate(0, 0.9375rem);
   }
 }
 
@@ -3311,6 +3320,23 @@ html.dark .cases-slider__navigate-button svg {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 27.2807017544%;
             flex: 0 0 27.2807017544%;
+  }
+
+  .service__body {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
+  .service__content {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+
+  .service__image {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
   }
 }
 
