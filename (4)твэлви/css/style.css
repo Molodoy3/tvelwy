@@ -1584,6 +1584,9 @@ html.dark .cases-slider__navigate-button svg {
   -webkit-column-gap: 0.3125rem;
      -moz-column-gap: 0.3125rem;
           column-gap: 0.3125rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .services__title {
@@ -1663,6 +1666,8 @@ html.dark .cases-slider__navigate-button svg {
 .service__bred-crumbs {
   margin-bottom: 1.25rem;
   line-height: 150%;
+  position: relative;
+  z-index: 2;
   /* @include adaptiv-value('margin-bottom', 60, 20, 1); */
 }
 
@@ -3348,6 +3353,7 @@ html.dark .cases-slider__navigate-button svg {
   .service__image {
     max-width: 18.75rem;
     margin: 0 auto;
+    margin-bottom: 0.625rem;
   }
 }
 

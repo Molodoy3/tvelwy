@@ -1546,7 +1546,7 @@ html.dark {
         display: flex;
         align-items: center;
         column-gap: rem(5);
-
+        justify-content: space-between;
         @media (max-width: 552px) {
             column-gap: rem(20);
         }
@@ -1644,6 +1644,8 @@ html.dark {
         //!
         margin-bottom: rem(20);
         line-height: 150%;
+        position: relative;
+        z-index: 2;
         /* @include adaptiv-value('margin-bottom', 60, 20, 1); */
     }
 
@@ -1763,6 +1765,7 @@ html.dark {
         @media (max-width: 780px) {
             max-width: rem(300);
             margin: 0 auto;
+            margin-bottom: rem(10);
         }
 
         @media (max-width: 500px) {
