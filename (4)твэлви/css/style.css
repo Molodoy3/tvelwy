@@ -1589,6 +1589,12 @@ html.dark .cases-slider__navigate-button svg {
           justify-content: space-between;
 }
 
+.services__item_8 .services__image {
+  -webkit-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
 .services__title {
   font-family: "Oswald", sans-serif;
   font-size: 1.8125rem;

@@ -1550,6 +1550,11 @@ html.dark {
         @media (max-width: 552px) {
             column-gap: rem(20);
         }
+        &_8{
+            .services__image{
+                transform: scale(0.9);
+            }
+        }
     }
 
     &__content {}
@@ -1648,7 +1653,6 @@ html.dark {
         z-index: 2;
         /* @include adaptiv-value('margin-bottom', 60, 20, 1); */
     }
-
     &__body {
         /* @media (min-width: 780px) { */
             display: flex;
