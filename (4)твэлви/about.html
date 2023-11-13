@@ -9,9 +9,30 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;700&family=Oswald:wght@300;400;500;600;700&family=Rubik+Mono+One&family=Rubik:wght@400;500;700;800;900&display=swap&_v=20231031182654"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;700&family=Oswald:wght@300;400;500;600;700&family=Rubik+Mono+One&family=Rubik:wght@400;500;700;800;900&display=swap&_v=20231113234634"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/style.min.css?_v=20231031182654">
+    <link rel="stylesheet" href="css/style.min.css?_v=20231113234634">
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(95507621, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript>
+        <div><picture><source srcset="https://mc.yandex.ru/watch/95507621" type="image/webp"><img src="https://mc.yandex.ru/watch/95507621" style="position:absolute; left:-9999px;" alt="" /></picture></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
 </head>
 
 <body>
@@ -29,7 +50,7 @@
                     <li><a href='about.html' class='menu__link'>о нас</a></li>
                     <li><a href='contacts.html' class='menu__link'>контакты</a></li>
                     <!-- <li><a href='' class='menu__link'>скачать приложение</a></li> -->
-                    <li><a id="buttonForOpenPopup" href='#' class='menu__link'>Оформить заказ</a></li>
+                    <li><a href="#" data-button-for-open-custom-popup="popupOrder" class='menu__link'>Оформить заказ</a></li>
                 </ul>
             </nav>
         </div>
@@ -227,13 +248,13 @@
             <div class="banners__links">
                 <a href="" class="banners__button connect-banners__button">Обратная связь</a>
                 <ul class="banners__social-list welcome-block__social-list">
-                    <li><a href="" class="welcome-block__link">
+                    <li><a href="https://t.me/tvelvi_it" class="welcome-block__link">
                             <picture>
                                 <source srcset='img/iconsPng/telegram-blue.webp' type='image/webp'>
                                 <img src='img/iconsPng/telegram-blue.png' alt='telegram'>
                             </picture>
                         </a></li>
-                    <li><a href="" class="welcome-block__link">
+                    <li><a href="https://wa.me/message/GEJZ2WL6QLI2K1" class="welcome-block__link">
                             <picture>
                                 <source srcset='img/iconsPng/watsApp.webp' type='image/webp'>
                                 <img src='img/iconsPng/watsApp.png' alt='watsApp'>
@@ -275,10 +296,10 @@
                     <h3 class="form-order-service__title">Хотите заказать услугу?</h3>
                     <div class="form-order-service__text">Свяжитесь с нами и расскажите о себе! Мы обязательно
                         рассмотрим ваше предложение</div>
-                    <form action="#" class="form-order-service__form">
+                    <form name="ApplicationForm" onsubmit="ym(95507621,'reachGoal','zayavka');  return true;" class="form-order-service__form">
                         <div class="form-order-service__inputs">
                             <input type="text" name="name" placeholder="Ваше имя" class="form-order-service__input">
-                            <input type="tel" name="tel" placeholder="+ 7 (XXX) XXX-XX-XX"
+                            <input type="tel" name="phone" placeholder="+ 7 (XXX) XXX-XX-XX"
                                 class="form-order-service__input">
                         </div>
                         <button class="form-order-service__button" type="submit" name="submit">Оставить заявку</button>
@@ -353,7 +374,7 @@
                     <a href="tel:79625641112" class="footer__tel">+7 962 564 11 12</a>
                 </div>
                 <div class="footer__geol">Казань, ул Пушкина, 12</div>
-                <button type="button" class="footer__button" id="buttonForOpenPopup">Оформить заказ</button>
+                <button type="button" class="footer__button">Оформить заказ</button>
             </div>
         </div>
     </div>
@@ -364,16 +385,16 @@
         </div>
     </div>
 </footer>
-        <section class="popup-order" id="popupOrder">
+        <section class="popup-order" data-custom-popup="popupOrder">
     <div class="popup-order__body">
-        <div class="popup-order__content">
-            <div class="popup-order__close" id="buttonForClosePopup">
+        <div class="popup-order__content" data-custom-popup-content>
+            <div class="popup-order__close" data-close-for-custom-popup>
                 <img src='img/icons/sprite.svg#close' alt='close'>
             </div>
             <h2 class="popup-order__title">Хотите <mark>заказать</mark> услугу?</h2>
             <div class="popup-order__text">Отправьте свое резюме, расскажите нам о себе и мы обязательно рассмотрим ваше
                 предложение</div>
-            <form action="#" class="popup-order__form">
+            <form class="popup-order__form" onsubmit="ym(95507621,'reachGoal','zayavka');  return true;" name="formOrder">
                 <div class="popup-order__select__wrap">
                     <select name="select" class="popup-order__select req select" id="popup-order-select">
                         <option disabled selected data-default-option>Выберите услугу</option>
@@ -410,12 +431,13 @@
             </form>
             <!-- <script>!function (a, m, o, c, r, m) { a[o + c] = a[o + c] || { setMeta: function (p) { this.params = (this.params || []).concat([p]) } }, a[o + r] = a[o + r] || function (f) { a[o + r].f = (a[o + r].f || []).concat([f]) }, a[o + r]({ id: "1224186", hash: "5dd02fd8e56ec0bd2c0dfc0e937fec28", locale: "ru" }), a[o + m] = a[o + m] || function (f, k) { a[o + m].f = (a[o + m].f || []).concat([[f, k]]) } }(window, 0, "amo_forms_", "params", "load", "loaded");</script>
             <script id="amoforms_script_1224186" async="async" charset="utf-8"
-                src="https://forms.amocrm.ru/forms/assets/js/amoforms.js?1697373834&_v=20231031182654"></script> -->
+                src="https://forms.amocrm.ru/forms/assets/js/amoforms.js?1697373834&_v=20231113234634"></script> -->
         </div>
     </div>
 </section>
     </div>
-    <script src="js/app.min.js?_v=20231031182654"></script>
+    <script src="js/app.min.js?_v=20231113234634"></script>
+    <script src="js/ApplicationForm.js?_v=20231113234634"></script>
 </body>
 
 </html>

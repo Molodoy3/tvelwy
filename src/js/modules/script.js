@@ -24,7 +24,7 @@ export function delegationClick() {
             if (activeMenu) {
                 activeMenu.classList.remove('open');
                 const iconMenu = document.querySelector('.menu__icon');
-                if (iconMenu){
+                if (iconMenu) {
                     iconMenu.classList.remove('active');
                 }
                 document.body.classList.remove('lock');
@@ -32,20 +32,34 @@ export function delegationClick() {
         }
 
         //для скрытия не нужного дефолтного элемента в выборе опции в попапе
-/*         if (targetElement.closest(".popup-order__select")) {
-            const selectElement = targetElement.closest(".popup-order__select");
-            const defaultElement = selectElement.querySelector("[data-default-option]");
-            if (defaultElement.style.display != "none") {
-                defaultElement.style.display = "none";
-            }
-        } */
+        /*         if (targetElement.closest(".popup-order__select")) {
+                    const selectElement = targetElement.closest(".popup-order__select");
+                    const defaultElement = selectElement.querySelector("[data-default-option]");
+                    if (defaultElement.style.display != "none") {
+                        defaultElement.style.display = "none";
+                    }
+                } */
 
-        //открытие, закрытие попапа
-        if (targetElement.closest("#buttonForOpenPopup")) {
-            const popup = document.querySelector("#popupOrder");
+        //?Открывание мобального окна (по классу open)
+        //атрибуты: data-button-for-open-custom-popup="popup" - кнопка открывания; data-custom-popup="popup" - попап; data-close-for-custom-popup - кнопка закрывания (обязательно внутри попапа);  data-custom-popup-content - контентная оболочка (внутри попапа внутри body попапа).
+        if (targetElement.closest("[data-close-for-custom-popup]")) {
+            const popup = targetElement.closest("[data-custom-popup]");
+            if (popup) {
+                popup.classList.remove('open');
+                //Устранение дергания при убирании скрола
+                document.body.style.overflow = "auto";
+                document.body.style.paddingRight = 0;
+                const header = document.querySelector("header");
+                if (header) {
+                    header.style.paddingRight = 0;
+                }
+            }
+        }
+        if (targetElement.closest("[data-button-for-open-custom-popup]")) {
+            const popupName = targetElement.closest("[data-button-for-open-custom-popup]").dataset.buttonForOpenCustomPopup;
+            const popup = document.querySelector(`[data-custom-popup="${popupName}"]`);
             if (popup) {
                 popup.classList.add('open');
-
                 //Устранение дергания при убирании скрола
                 const lockPaddingValue = window.innerWidth - document.body.offsetWidth + 'px';
                 document.body.style.paddingRight = lockPaddingValue;
@@ -57,12 +71,11 @@ export function delegationClick() {
 
                 e.preventDefault();
             }
-        }
-        if (targetElement.closest("#buttonForClosePopup")) {
-            const popup = targetElement.closest("#popupOrder");
+        } else if (!targetElement.closest("[data-custom-popup].open [data-custom-popup-content]")) {
+            const popup = document.querySelector("[data-custom-popup].open");
             if (popup) {
                 popup.classList.remove('open');
-
+               
                 //Устранение дергания при убирании скрола
                 document.body.style.overflow = "auto";
                 document.body.style.paddingRight = 0;

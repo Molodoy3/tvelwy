@@ -18,7 +18,7 @@
                     <div class="contacts__top">
                         <h1 class="contacts__title">Контактная информация</h1>
                         <div class="service__links contacts__links">
-                            <a href="contact.html" class="service__connect">Связаться с
+                            <a href="contacts.html" class="service__connect">Связаться с
                                 нами</a>
                             <ul class="welcome-block__social-list">
                                 <li><a href="https://t.me/tvelvi_it" class="welcome-block__link">
@@ -105,7 +105,7 @@
                     <h3 class="form-order-service__title">Остались вопросы? нужна консультация?</h3>
                     <div class="form-order-service__text">Свяжитесь с нами и расскажите о себе! Мы обязательно
                         рассмотрим ваше предложение</div>
-                    <form action="sendform.php" class="form-order-service__form">
+                    <form name="ApplicationForm" onsubmit="ym(95507621,'reachGoal','zayavka');  return true;" class="form-order-service__form">
                         <div class="form-order-service__inputs">
                             <input type="text" name="name" placeholder="Ваше имя" class="form-order-service__input">
                             <input type="tel" name="phone" placeholder="+ 7 (XXX) XXX-XX-XX"
@@ -120,6 +120,7 @@
         @@include('html/popup.html')
     </div>
     <script src="js/app.min.js"></script>
+    <script src="js/ApplicationForm.js"></script>
 </body>
 
 </html>

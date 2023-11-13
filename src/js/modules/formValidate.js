@@ -1,9 +1,9 @@
 export function formValidate() {
     
 
-    var A = document.querySelectorAll("[type=submit]");
-    const e = document.forms;
-    if (e.length) {
+    var A = document.querySelectorAll(".popup-order__button");
+    const e = document.forms.formOrder;
+    if (e) {
         
         A.forEach((function(e) {
             return e.addEventListener("click", s)

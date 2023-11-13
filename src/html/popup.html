@@ -1,13 +1,13 @@
-<section class="popup-order" id="popupOrder">
+<section class="popup-order" data-custom-popup="popupOrder">
     <div class="popup-order__body">
-        <div class="popup-order__content">
-            <div class="popup-order__close" id="buttonForClosePopup">
+        <div class="popup-order__content" data-custom-popup-content>
+            <div class="popup-order__close" data-close-for-custom-popup>
                 <img src='@img/icons/sprite.svg#close' alt='close'>
             </div>
             <h2 class="popup-order__title">Хотите <mark>заказать</mark> услугу?</h2>
             <div class="popup-order__text">Отправьте свое резюме, расскажите нам о себе и мы обязательно рассмотрим ваше
                 предложение</div>
-            <form action="#" class="popup-order__form">
+            <form class="popup-order__form" onsubmit="ym(95507621,'reachGoal','zayavka');  return true;" name="formOrder">
                 <div class="popup-order__select__wrap">
                     <select name="select" class="popup-order__select req select" id="popup-order-select">
                         <option disabled selected data-default-option>Выберите услугу</option>
