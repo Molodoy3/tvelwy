@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru"  class="htmlWrap">
+@@include('html/head.html', {
+    'title': 'IT consulting — Твэлви',
+    'description': 'Мы предлагаем консультационные услуги в области информационных технологий (IT). Наша команда экспертов поможет вам определить и реализовать эффективные IT-решения для вашего бизнеса. Мы также предлагаем стратегическое планирование и консультации по внедрению новых технологий для повышения эффективности вашего бизнеса.'
+})
+<body>
+
+    <div class="wrapper">
+        <main class="page page_new-design">
+            <section class="favor" data-id-option="it-consulting">
+                <div class='favor__container'>
+                    <a href="catalog.html" class="favor__back">←</a>
+                    <div class="favor__body">
+                        <div class="favor__row">
+                            <div class="favor__image catalog__image catalog__image_purple">
+                                <picture>
+                                    <source srcset='@img/catalog/4.webp' type='image/webp'>
+                                    <img src='@img/catalog/4.png' alt='Сервис'>
+                                </picture>
+                            </div>
+                            <div class="favor__content">
+                                <h1 class="favor__title">it consulting</h1>
+                                <div class="favor__price">от 7 999 руб</div>
+                                <div class="favor__logo"><img src='@img/logo.svg' alt='logo'></div>
+                                <div class="favor__text">Мы предлагаем консультационные услуги в области информационных технологий (IT). Наша команда экспертов поможет вам определить и реализовать эффективные IT-решения для вашего бизнеса. Мы также предлагаем стратегическое планирование и консультации по внедрению новых технологий для повышения эффективности вашего бизнеса.</div>
+                                <button data-button-for-open-custom-popup="popupOrder" type="button" class="favor__button">Оформить заказ <svg data-bbox="20 20 160 160" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" data-type="shape">
+                                    <g>
+                                        <path d="M100 180c-44.112 0-80-35.888-80-80s35.888-80 80-80 80 35.888 80 80-35.888 80-80 80zm0-150.784c-39.031 0-70.784 31.754-70.784 70.784S60.969 170.784 100 170.784 170.784 139.03 170.784 100 139.031 29.216 100 29.216z"></path>
+                                        <path d="M100.079 144.246c-15.882 0-30.365-8.069-38.741-21.585a45.44 45.44 0 0 1-2.759-5.17 4.609 4.609 0 0 1 8.395-3.803 36.297 36.297 0 0 0 2.198 4.117c6.683 10.787 18.236 17.226 30.906 17.226 12.553 0 24.051-6.349 30.757-16.984a36.34 36.34 0 0 0 2.209-4.057 4.609 4.609 0 0 1 8.358 3.886 45.914 45.914 0 0 1-2.77 5.087c-8.405 13.327-22.817 21.283-38.553 21.283z"></path>
+                                        <path d="M137.243 84.369a8.321 8.321 0 1 1-16.642 0 8.321 8.321 0 0 1 16.642 0z"></path>
+                                        <path d="M79.4 84.369a8.321 8.321 0 1 1-16.642 0 8.321 8.321 0 0 1 16.642 0z"></path>
+                                    </g>
+                                </svg></button>
+                                <div class="favor__stages-title">Этапы разработки:</div>
+                                <ol class="favor__stages">
+                                    <li>Формирование требований</li>
+                                    <li>Выработка решений</li>
+                                    <li>Внедрение решений</li>
+                                    <li>Послепроэктный этап</li>
+                                </ol>
+                                <div class="favor__terms"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="favor__social-list catalog__social-list">
+                        <li><a href="https://t.me/tvelvi_it">Telegram</a></li>
+                        <li><a href="https://vk.com/tvelvi">Вконтакте </a></li>
+                        <li><a href="https://wa.me/message/GEJZ2WL6QLI2K1">WhatsApp</a></li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+        @@include('html/popupOrderNew.html')
+    </div>
+    <script src="js/app.min.js"></script>
+</body>
+</html>

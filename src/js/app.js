@@ -1,13 +1,9 @@
 "use strict";
 //?Импорт кастомного открывания картинок (снипет doi)
 //import customOpenImage from './modules/customOpenImage.js';
-//?Импор Свайпера (снипет swp)
-import Swiper from 'swiper';
-import { Navigation, Pagination, Autoplay, Keyboard, EffectFade } from 'swiper/modules';
 //?Основные скрипты (делегирование, шапка)
 import { delegationClick } from './modules/script.js';
 /* import { headerScroll } from './modules/script.js'; */
-import { closeMenu } from './modules/script.js';
 
 import { formValidate } from './modules/formValidate.js';
 
@@ -30,24 +26,77 @@ window.addEventListener("load", windowLoad);
 function windowLoad() {
 
     //!Drag эффект
+    //работает по атрибуту data-drag=1 с значением айдишником, которые не могут повторяться, активный элемент имеет data-drag-active
+    //По доработкам точно можно сократить код тем, что соединить одинаковые куски кодов из комп. версии и моб. версии в функции, но там только обращение к e.clientX разные
+    //Также код не очень подготовлен для добавления, изменения новых элементов, объект с параметрами будет увеличиваться, z-indexы становится одинаковыми (по 0 вроде)
+    //, но при этом в целом все будет норм работать, не использующиеся элементы не будут чиститься
+    //желательно от id избавиться, писать просто data-drag, так как в объекте с одним ключем только один элемент может быть, но это тоже особо не ломает
     let isDragging = false;
     let offsetX, offsetY;
     let pressStartTime;
 
+    //В зависимости от страницы определяем имя объекта в локальном хранилище для позиций и z-indexов
+    let nameObjectZindex;
+    let nameObjectPositions;
+    const href = new URL(window.location.href).pathname.slice(1);
+    if (href === "catalog" || href === "catalog.html") {
+        nameObjectZindex = "objectZIndexDragElementsCatalog";
+        nameObjectPositions = "ObjectpositionsDragElementsCatalog";
+    } else {
+        nameObjectZindex = "objectZIndexDragElements";
+        nameObjectPositions = "ObjectpositionsDragElements";
+
+    }
+
+
+
+    //?Объект z-indexов для drag элементов
+    if (!localStorage.getItem(nameObjectZindex)) {
+        const dragElements = document.querySelectorAll("[data-drag]");
+        const dragElementsLenght = dragElements.length;
+        if (dragElementsLenght) {
+            const obj = {};
+
+            let i = 0;
+            dragElements.forEach(elem => {
+                i++;
+                obj[elem.dataset.drag] = i;
+                elem.style.zIndex = i;
+            });
+
+            const jsonString = JSON.stringify(obj);
+            localStorage.setItem(nameObjectZindex, jsonString);
+        }
+    } else {
+        //?Установка z-index на каждый drag элемент
+        const dragElements = document.querySelectorAll("[data-drag]");
+        if (dragElements.length) {
+            dragElements.forEach(item => {
+                const elementId = item.dataset.drag;
+                const objectZIndex = JSON.parse(localStorage.getItem(nameObjectZindex));
+
+                item.style.zIndex = objectZIndex[elementId];
+            });
+        }
+    }
 
     //?позиционирование элементов по локальному объекту
-    if (!localStorage.getItem("ObjectpositionsDragElements")) {
+    if (!localStorage.getItem(nameObjectPositions)) {
         const obj = {};
         const jsonString = JSON.stringify(obj);
-        localStorage.setItem("ObjectpositionsDragElements", jsonString);
+        localStorage.setItem(nameObjectPositions, jsonString);
     } else {
-        document.querySelectorAll("[data-drag]").forEach(item => {
-            const elementId = item.dataset.drag;
-            const objectPositions = JSON.parse(localStorage.getItem("ObjectpositionsDragElements"));
+        //?Установка left и top на каждый drag элемент
+        const dragElements = document.querySelectorAll("[data-drag]");
+        if (dragElements.length) {
+            dragElements.forEach(item => {
+                const elementId = item.dataset.drag;
+                const objectPositions = JSON.parse(localStorage.getItem(nameObjectPositions));
 
-            item.style.left = objectPositions["x" + elementId];
-            item.style.top = objectPositions["y" + elementId];
-        });
+                item.style.left = objectPositions["x" + elementId];
+                item.style.top = objectPositions["y" + elementId];
+            });
+        }
     }
 
     //?при нажатии лкм либо на моб нажатии
@@ -55,8 +104,42 @@ function windowLoad() {
         const targetElement = e.target;
         if (targetElement.closest("[data-drag]")) {
             isDragging = true;
-
             const dragElement = targetElement.closest("[data-drag]");
+
+            //?Изменение z-index(ов)
+            const dragElements = document.querySelectorAll("[data-drag");
+            const zIndexObject = JSON.parse(localStorage.getItem(nameObjectZindex));
+            let maxZIndex = dragElements.length + 1;
+
+            const currentElementZIdexValue = dragElement.style.zIndex;
+            if (currentElementZIdexValue !== maxZIndex) {
+                dragElement.style.zIndex = maxZIndex;
+                zIndexObject[dragElement.dataset.drag] = maxZIndex;
+                for (let i = Number(currentElementZIdexValue) + 1; i <= maxZIndex; i++) {
+                    dragElements.forEach(elem => {
+                        const zIndexElem = elem.style.zIndex;
+                        if (zIndexElem == i) {
+                            elem.style.zIndex -= 1;
+                            zIndexObject[elem.dataset.drag] -= 1;
+                        }
+                    });
+                }
+
+                //!Для лого только (можно удалить, если нет лого)
+                /* const logo = document.querySelector(".catalog__item_logo");
+                if (logo) {
+                    const zIndexLogoValue = logo.style.zIndex;
+                    if (zIndexLogoValue > 0) {
+                        if (zIndexLogoValue == maxZIndex) {
+                            logo.style.zIndex -= 2;
+                        } else
+                            logo.style.zIndex -= 1;
+                    }
+                } */
+
+                localStorage.setItem(nameObjectZindex, JSON.stringify(zIndexObject));
+            }
+
             dragElement.dataset.dragActive = "";
 
             offsetX = e.clientX - dragElement.getBoundingClientRect().left;
@@ -73,6 +156,42 @@ function windowLoad() {
             const dragElement = targetElement.closest("[data-drag]");
             dragElement.dataset.dragActive = "";
 
+
+            //?Изменение z-index(ов)
+            const dragElements = document.querySelectorAll("[data-drag");
+            const zIndexObject = JSON.parse(localStorage.getItem(nameObjectZindex));
+            let maxZIndex = dragElements.length + 1;
+
+            const currentElementZIdexValue = dragElement.style.zIndex;
+            if (currentElementZIdexValue !== maxZIndex) {
+                dragElement.style.zIndex = maxZIndex;
+                zIndexObject[dragElement.dataset.drag] = maxZIndex;
+                for (let i = Number(currentElementZIdexValue) + 1; i <= maxZIndex; i++) {
+                    dragElements.forEach(elem => {
+                        const zIndexElem = elem.style.zIndex;
+                        if (zIndexElem == i) {
+                            elem.style.zIndex -= 1;
+                            zIndexObject[elem.dataset.drag] -= 1;
+                        }
+                    });
+                }
+
+                //!Для лого только (можно удалить, если нет лого)
+                /* const logo = document.querySelector(".catalog__item_logo");
+                if (logo) {
+                    const zIndexLogoValue = logo.style.zIndex;
+                    if (zIndexLogoValue > 1) {
+                        if (zIndexLogoValue == maxZIndex) {
+                            logo.style.zIndex -= 2;
+                        } else
+                            logo.style.zIndex -= 1;
+                    }
+                } */
+
+                localStorage.setItem(nameObjectZindex, JSON.stringify(zIndexObject));
+            }
+
+
             offsetX = e.touches[0].clientX - dragElement.getBoundingClientRect().left;
             offsetY = e.touches[0].clientY - dragElement.getBoundingClientRect().top;
         }
@@ -87,12 +206,12 @@ function windowLoad() {
             delete activeDragElement.dataset.dragActive;
 
             //?Сохранение в localStorage
-            const updateObj = JSON.parse(localStorage.getItem("ObjectpositionsDragElements"));
+            const updateObj = JSON.parse(localStorage.getItem(nameObjectPositions));
 
             updateObj["x" + activeDragElement.dataset.drag] = activeDragElement.style.left;
             updateObj["y" + activeDragElement.dataset.drag] = activeDragElement.style.top;
 
-            localStorage.setItem("ObjectpositionsDragElements", JSON.stringify(updateObj));
+            localStorage.setItem(nameObjectPositions, JSON.stringify(updateObj));
 
             const pressEndTime = new Date();
             const pressDuration = pressEndTime - pressStartTime;
@@ -111,12 +230,12 @@ function windowLoad() {
             delete activeDragElement.dataset.dragActive;
 
             //?Сохранение в localStorage
-            const updateObj = JSON.parse(localStorage.getItem("ObjectpositionsDragElements"));
+            const updateObj = JSON.parse(localStorage.getItem(nameObjectPositions));
 
             updateObj["x" + activeDragElement.dataset.drag] = activeDragElement.style.left;
             updateObj["y" + activeDragElement.dataset.drag] = activeDragElement.style.top;
 
-            localStorage.setItem("ObjectpositionsDragElements", JSON.stringify(updateObj));
+            localStorage.setItem(nameObjectPositions, JSON.stringify(updateObj));
         }
     });
 
@@ -150,6 +269,8 @@ function windowLoad() {
             activeDragElement.style.top = topPosition + '%';
         }
     });
+
+
 
 
 
@@ -251,39 +372,6 @@ function windowLoad() {
         };
         observer.observe(mainSlideFromMainSlider, config);
     } */
-
-    const simulateTouch = /Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent) ? true : false;
-    const MainSlider = document.querySelector('.welcome-block__slider');
-    if (MainSlider) {
-        new Swiper(MainSlider, {
-            modules: [Navigation, Pagination, Autoplay, Keyboard, EffectFade],
-            wrapperClass: 'welcome-block__wrapper',
-            slideClass: 'welcome-block__slide',
-            navigation: {
-                prevEl: '.welcome-block__arrow_prev',
-                nextEl: '.welcome-block__arrow_next',
-            },
-            autoHeight: true,
-            pagination: {
-                el: '.welcome-block__pagination',
-                clickable: true
-            },
-            keyboard: {
-                enabled: true
-            },
-            effect: 'fade',
-            direction: 'horizontal',
-            slidesPerView: 1,
-            loop: false,
-            speed: 600,
-            spaceBetween: 30,
-            simulateTouch: simulateTouch,
-            observer: true,
-            observeParents: true,
-            observeSlideChildren: true
-        });
-    }
-
 
     //Иницилизация выбранной опции в форме
     const idOption = document.querySelector("[data-id-option]");

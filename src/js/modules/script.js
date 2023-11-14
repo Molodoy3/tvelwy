@@ -4,7 +4,7 @@ export function delegationClick() {
         const targetElement = e.target;
 
         //?Открывание и закрывание бургера
-        if (targetElement.closest('.menu__icon')) {
+        /* if (targetElement.closest('.menu__icon')) {
             const menuBody = document.querySelector('.menu__body');
             menuBody.classList.toggle('open');
             targetElement.closest('.menu__icon').classList.toggle('active');
@@ -29,7 +29,7 @@ export function delegationClick() {
                 }
                 document.body.classList.remove('lock');
             }
-        }
+        } */
 
         //для скрытия не нужного дефолтного элемента в выборе опции в попапе
         /*         if (targetElement.closest(".popup-order__select")) {

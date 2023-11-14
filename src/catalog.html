@@ -1,149 +1,84 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru"  class="htmlWrap">
 @@include('html/head.html', {
-'title': 'твэлви — каталог',
-'description': 'Одной из основных причин успеха является наш подход, заключающийся в создании небольших команд, специализирующихся на каждом проекте. Благодаря такому разделению задач мы можем предложить нашим клиентам широкий спектр услуг, Мы всегда стремимся к индивидуальному подходу к каждому проекту, чтобы удовлетворить потребности и ожидания наших клиентов.'
+    'title': 'Каталог — Твэлви',
+    'description': 'Одной из основных причин успеха является наш подход, заключающийся в создании небольших команд, специализирующихся на каждом проекте. Благодаря такому разделению задач мы можем предложить нашим клиентам широкий спектр услуг, Мы всегда стремимся к индивидуальному подходу к каждому проекту, чтобы удовлетворить потребности и ожидания наших клиентов.'
 })
+<body class="lock">
 
-<body>
-    <div class="wrapper wrapper_catalog">
-        @@include('html/header.html')
-        <main class="page">
-            <section class="catalog-main-block">
-                <div class='catalog-main-block__container'>
-                    <ul class="catalog-main-block__bred-crumbs bred-crumbs">
-                        <li><a href="index.html">Главная</a></li>
-                        <li>Каталог услуг</li>
+    <div class="wrapper">
+        <main class="page page_new-design">
+            <section class="catalog">
+                <div class='catalog__container'>
+                    <ul class="catalog__links">
+                        <li><a class="catalog__link" href="/">←</a></li>
+                        <li><a class="catalog__link" href="">Заказать Услугу →</a></li>
+                        <li><button type="button" class="catalog__link" data-button-for-open-custom-popup="popupInvitation">Работа</button></li>
                     </ul>
-                    <h1 class="catalog-main-block__title title">каталог услуг</h1>
-                    <div class="catalog-main-block__text-wrap">
-                        <div class="catalog-main-block__text">Одной из основных причин успеха является наш подход,
-                            заключающийся в создании небольших команд, специализирующихся на каждом проекте. Благодаря
-                            такому разделению задач мы можем предложить нашим клиентам широкий спектр услуг,
-                            Мы всегда стремимся к индивидуальному подходу к каждому проекту, чтобы удовлетворить
-                            потребности и ожидания наших клиентов. </div>
-                    </div>
-                </div>
-            </section>
-            <section class="services">
-                <div class='services__container'>
-                    <div class="services__item">
-                        <div class="services__content">
-                            <h4 class="services__title">Разработка веб приложений</h4>
-                            <a href="web-development-agency.html" class="services__button">Подробнее</a>
+                    <div class="catalog__items">
+                        <div class="catalog__item" data-drag="1">
+                            <div data-custom-link="mobile-app-development.html" class="catalog__image catalog__image_big">
+                                <picture>
+                                    <source srcset='@img/catalog/1.webp' type='image/webp'>
+                                    <img src='@img/catalog/1.png' alt='Сервис'>
+                                </picture>
+                            </div>
+                            <div class="catalog__text">разработка мобильных-
+                                приложений</div>
+                            <div class="catalog__price">от 13 тыс руб</div>
                         </div>
-                        <div class="services__image">
-                            <img class="services__image_light" src='@img/icons/sprite.svg#services--01' alt='icon'>
-                            <img class="services__image_dark" src='@img/icons/sprite.svg#services--01-dark' alt='icon'>
+                        <div class="catalog__item" data-drag="2">
+                            <div data-custom-link="website-devolopment.html" class="catalog__image catalog__image_red">
+                                <picture>
+                                    <source srcset='@img/catalog/3.webp' type='image/webp'>
+                                    <img src='@img/catalog/3.png' alt='Сервис'>
+                                </picture>
+                            </div>
+                            <div class="catalog__text">разработка сайтов</div>
+                            <div class="catalog__price">от 33 999 руб</div>
                         </div>
-                    </div>
-                    <div class="services__item">
-                        <div class="services__content">
-                            <h4 class="services__title">разработка мобильных
-                                приложений</h4>
-                            <a href="mobile-application-development.html" class="services__button">Подробнее</a>
+                        <div class="catalog__item" data-drag="4">
+                            <div data-custom-link="web-app-development.html" class="catalog__image">
+                                <picture>
+                                    <source srcset='@img/catalog/2.webp' type='image/webp'>
+                                    <img src='@img/catalog/2.png' alt='Сервис'>
+                                </picture>
+                            </div>
+                            <div class="catalog__text">разработка веб-
+                                приложенийй</div>
+                            <div class="catalog__price">от 55 999 руб</div>
                         </div>
-                        <div class="services__image">
-                            <img class="services__image_light" src='@img/icons/sprite.svg#services--02' alt='icon'>
-                            <img class="services__image_dark" src='@img/icons/sprite.svg#services--02-dark' alt='icon'>
+                        <div class="catalog__item" data-drag="5">
+                            <div data-custom-link="game-development.html" class="catalog__image catalog__image_green">
+                                <picture>
+                                    <source srcset='@img/catalog/5.webp' type='image/webp'>
+                                    <img src='@img/catalog/5.png' alt='Сервис'>
+                                </picture>
+                            </div>
+                            <div class="catalog__text">разработка игр</div>
+                            <div class="catalog__price">от 155 999 руб</div>
                         </div>
-                    </div>
-                    <div class="services__item">
-                        <div class="services__content">
-                            <h4 class="services__title">Разработка игровых
-                                дизайнов</h4>
-                            <a href="game-development.html" class="services__button">Подробнее</a>
-                        </div>
-                        <div class="services__image">
-                            <img class="services__image_light" src='@img/icons/sprite.svg#services--03' alt='icon'>
-                            <img class="services__image_dark" src='@img/icons/sprite.svg#services--03-dark' alt='icon'>
-                        </div>
-                    </div>
-                    <div class="services__item">
-                        <div class="services__content">
-                            <h4 class="services__title">Разработка сайтов</h4>
-                            <a href="website-development.html" class="services__button">Подробнее</a>
-                        </div>
-                        <div class="services__image">
-                            <img class="services__image_light" src='@img/icons/sprite.svg#services--04' alt='icon'>
-                            <img class="services__image_dark" src='@img/icons/sprite.svg#services--04-dark' alt='icon'>
-                        </div>
-                    </div>
-                    <div class="services__item">
-                        <div class="services__content">
-                            <h4 class="services__title">SEO оптимизация
-                                от твэлви</h4>
-                            <a href="seo-optimisation.html" class="services__button">Подробнее</a>
-                        </div>
-                        <div class="services__image">
-                            <img class="services__image_light" src='@img/icons/sprite.svg#services--05' alt='icon'>
-                            <img class="services__image_dark" src='@img/icons/sprite.svg#services--05-dark' alt='icon'>
+                        <div class="catalog__item" data-drag="6">
+                            <div data-custom-link="it-consaling.html" class="catalog__image catalog__image_purple">
+                                <picture>
+                                    <source srcset='@img/catalog/4.webp' type='image/webp'>
+                                    <img src='@img/catalog/4.png' alt='Сервис'>
+                                </picture>
+                            </div>
+                            <div class="catalog__text">it консалтинг</div>
+                            <div class="catalog__price">от 7 999 руб</div>
                         </div>
                     </div>
-                    <div class="services__item">
-                        <div class="services__content">
-                            <h4 class="services__title">CLOUD РЕШЕНИЯ
-                                И ХОСТИНГ</h4>
-                            <a href="cloud-solutions-and-hosting.html" class="services__button">Подробнее</a>
-                        </div>
-                        <div class="services__image">
-                            <img class="services__image_light" src='@img/icons/sprite.svg#services--06' alt='icon'>
-                            <img class="services__image_dark" src='@img/icons/sprite.svg#services--06-dark' alt='icon'>
-                        </div>
-                    </div>
-                    <div class="services__item">
-                        <div class="services__content">
-                            <h4 class="services__title">UI/UX дизайн
-                                от твэлви</h4>
-                            <a href="UX-UI-design.html" class="services__button">Подробнее</a>
-                        </div>
-                        <div class="services__image">
-                            <img class="services__image_light" src='@img/icons/sprite.svg#services--07' alt='icon'>
-                            <img class="services__image_dark" src='@img/icons/sprite.svg#services--07-dark' alt='icon'>
-                        </div>
-                    </div>
-                    <div class="services__item services__item_8">
-                        <div class="services__content">
-                            <h4 class="services__title">IT консалтинг от Твэлви</h4>
-                            <a href="it-consulting.html" class="services__button">Подробнее</a>
-                        </div>
-                        <div class="services__image">
-                            <img class="services__image_light" src='@img/icons/sprite.svg#services--08' alt='icon'>
-                            <img class="services__image_dark" src='@img/icons/sprite.svg#services--08-dark' alt='icon'>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="seo-text">
-                <div class='seo-text__container'>
-                    <h2 class="seo-text__title"><mark>НЕМНОГО</mark> о НАС</h2>
-                    <div class="seo-text__text">
-                        <p>
-                            Мы предлагаем полный цикл услуг, начиная от веб-разработки и заканчивая сложными ИТ
-                            решениями. Наша команда состоит из опытных и высококвалифицированных специалистов, каждый из
-                            которых специализируется в своей области. Мы готовы взяться за любой проект и гарантируем
-                            качество работы.
-                        </p>
-                        <p>
-                            Наш подход основан на создании небольших команд, специализирующихся на каждом проекте. Это
-                            позволяет нам эффективно решать задачи и удовлетворять потребности и ожидания наших
-                            клиентов. Мы всегда стремимся к индивидуальному подходу и готовы адаптироваться к любым
-                            вызовам.
-                        </p>
-                        <p>
-                            Мы также предлагаем консалтинговые услуги, информационную безопасность и аналитические
-                            услуги, чтобы помочь нашим клиентам принимать обоснованные решения и достичь успеха в сфере
-                            информационных технологий.
-                        </p>
-
-                    </div>
+                    <ul class="catalog__social-list">
+                        <li><a href="https://t.me/tvelvi_it">Telegram</a></li>
+                        <li><a href="https://vk.com/tvelvi">Вконтакте </a></li>
+                        <li><a href="https://wa.me/message/GEJZ2WL6QLI2K1">WhatsApp</a></li>
+                    </ul>
                 </div>
             </section>
         </main>
-        @@include('html/footer.html')
-        @@include('html/popup.html')
+        @@include('html/popupInvitation.html')
     </div>
     <script src="js/app.min.js"></script>
 </body>
-
 </html>
